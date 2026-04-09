@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\UserAccessMail;
+use App\Mail\AdminNotificationMail;
 
 class WebhookController extends Controller
 {
@@ -74,34 +76,28 @@ class WebhookController extends Controller
 
                 // Send Email Notification to User
                 try {
-                    Mail::send('emails.access', [
+                    Mail::to($email)->send(new UserAccessMail([
                         'name' => $name,
                         'email' => $email,
                         'password' => $is_new_user ? $password : '****** (Gunakan password lama Anda)',
-                    ], function ($message) use ($email) {
-                        $message->to($email)
-                                ->subject('Akses Akun Wamaps Anda');
-                    });
-                    Log::info("Webhook: Email sent to user $email");
+                    ]));
+                    Log::info("Webhook: Email queued for user $email");
                 } catch (\Exception $e) {
                     Log::error("Webhook Email Error (User): " . $e->getMessage());
                 }
 
                 // Send Email Notification to Admin
                 try {
-                    Mail::send('emails.admin_notification', [
+                    Mail::to('diwin321@gmail.com')->send(new AdminNotificationMail([
                         'merchant_ref' => $merchant_ref,
                         'customer_name' => $name,
                         'customer_email' => $email,
                         'amount' => $transaction->amount,
                         'method' => $transaction->method,
                         'status' => $status,
-                        'paid_at' => $transaction->paid_at ? $transaction->paid_at->format('d M Y H:i:s') : now()->format('d M Y H:i:s'),
-                    ], function ($message) {
-                        $message->to('diwin321@gmail.com')
-                                ->subject('🔥 Notifikasi Penjualan Baru - Wamaps');
-                    });
-                    Log::info("Webhook: Admin notification sent to diwin321@gmail.com");
+                        'paid_at' => $transaction->paid_at ? \Carbon\Carbon::parse($transaction->paid_at)->format('d M Y H:i:s') : now()->format('d M Y H:i:s'),
+                    ]));
+                    Log::info("Webhook: Admin notification queued to diwin321@gmail.com");
                 } catch (\Exception $e) {
                     Log::error("Webhook Email Error (Admin): " . $e->getMessage());
                 }
