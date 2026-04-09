@@ -129,9 +129,9 @@
                 <a class="text-slate-600 dark:text-slate-400 font-medium hover:text-primary transition-colors"
                     href="#pricing">Pricing</a>
             </div>
-            <button
+            <a href="{{ route('checkout') }}"
                 class="bg-primary text-on-primary px-6 py-2 rounded-xl font-semibold scale-95 active:duration-150 transition-all hover:bg-primary-container">Beli
-                Sekarang</button>
+                Sekarang</a>
         </div>
     </nav>
     <!-- Hero Section -->
@@ -152,13 +152,13 @@
                     coding, dalam hitungan menit.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <button
-                        class="bg-primary text-on-primary px-8 py-4 rounded-xl text-lg font-bold flex items-center justify-center gap-2 hover:bg-primary-container transition-all">
-                        Beli Sekarang 
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-                        </svg>
-                    </button>
+                        <a href="{{ route('checkout') }}"
+                                class="bg-primary text-on-primary px-8 py-4 rounded-xl text-lg font-bold flex items-center justify-center gap-2 hover:bg-primary-container transition-all">
+                                Beli Sekarang
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+                                </svg>
+                            </a>
                     <button
                         class="bg-surface-container-low text-primary px-8 py-4 rounded-xl text-lg font-bold hover:bg-surface-container-high transition-all">
                         Lihat Demo
@@ -728,10 +728,10 @@
                                 </div>
                                 <span>Free Update Selamanya</span>
                             </li>
-                            <button
-                                class="w-full py-6 bg-white hover:bg-slate-100 text-primary rounded-2xl text-xl font-black shadow-2xl shadow-black/20 transition-all hover:-translate-y-1 active:scale-[0.98]">
+                            <a href="{{ route('checkout') }}"
+                                class="w-full py-6 bg-white hover:bg-slate-100 text-primary rounded-2xl text-xl font-black shadow-2xl shadow-black/20 transition-all hover:-translate-y-1 active:scale-[0.98] flex items-center justify-center">
                                 Beli Sekarang
-                            </button>
+                            </a>
                     </div>
                 </div>
             </div>
@@ -840,7 +840,7 @@
                         sebelum harga naik kembali!
                     </p>
                     <div class="pt-6">
-                        <a href="#pricing"
+                        <a href="{{ route('checkout') }}"
                             class="inline-flex items-center gap-4 bg-white hover:bg-slate-100 text-primary px-10 py-6 rounded-2xl text-xl md:text-2xl font-black shadow-2xl shadow-black/20 transition-all hover:-translate-y-1 active:scale-[0.98] group">
                             YA, SAYA MAU WAMAPS SEKARANG!
                             <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none"
@@ -976,7 +976,7 @@
             </div>
 
             <!-- Action Button -->
-            <a href="#pricing"
+            <a href="{{ route('checkout') }}"
                 class="bg-green-600 hover:bg-green-500 text-white px-5 py-3 rounded-xl font-black text-xs flex items-center gap-2 shadow-xl shadow-green-900/10 active:scale-95 transition-all">
                 Beli Sekarang
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

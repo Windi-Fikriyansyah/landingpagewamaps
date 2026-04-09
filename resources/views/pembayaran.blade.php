@@ -96,169 +96,176 @@
         h3 {
             font-family: 'Manrope', sans-serif;
         }
+
+        /* Fix for icon text showing as text */
+        .material-symbols-outlined {
+            vertical-align: middle;
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            white-space: nowrap;
+            font-family: 'Material Symbols Outlined' !important;
+        }
     </style>
 </head>
 
-<body class="bg-surface text-on-surface min-h-screen pb-20 md:pb-0">
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
     <!-- Top Navigation (Shared Component) -->
     <nav
-        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-surface-variant/30">
+        class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-surface-variant/20 shadow-sm">
         <div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-16">
-            <div class="text-xl font-extrabold tracking-tight text-primary">LeadFlow Pro</div>
-            <div class="hidden md:flex space-x-8">
-                <a class="text-on-surface-variant font-semibold hover:text-primary transition-colors"
-                    href="#">Features</a>
-                <a class="text-on-surface-variant font-semibold hover:text-primary transition-colors" href="#">How it
-                    Works</a>
-                <a class="text-on-surface-variant font-semibold hover:text-primary transition-colors"
-                    href="#">Pricing</a>
+            <div class="text-2xl font-black tracking-tighter text-primary flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-3xl">api</span>
+                Wamaps
             </div>
-            <button class="bg-primary text-on-primary px-6 py-2 rounded-xl font-bold active:scale-95 transition-all">Buy
-                Now</button>
+            <div class="hidden md:flex items-center gap-6">
+                <div class="flex items-center gap-2 text-[10px] font-bold text-green-600 bg-green-50 px-3 py-1 rounded-full border border-green-100 uppercase tracking-widest">
+                    <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                    Sistem Online
+                </div>
+            </div>
         </div>
     </nav>
-    <main class="pt-24 pb-12 px-6">
+
+    <main class="pt-24 pb-12 px-4 md:px-6 flex-grow">
         <div class="max-w-4xl mx-auto">
-            <!-- Hero Success Message -->
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center justify-center w-16 h-16 bg-secondary-container rounded-full mb-6">
-                    <span class="material-symbols-outlined text-on-secondary-container text-4xl"
-                        style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                </div>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-primary mb-4 tracking-tight">Pesanan Berhasil Dibuat
-                </h1>
-                <p class="text-on-surface-variant text-lg max-w-xl mx-auto font-medium">Terima kasih telah memilih
-                    LeadFlow Pro. Langkah terakhir untuk mengaktifkan fitur premium Anda.</p>
+            <!-- Professional Header -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl md:text-5xl font-black text-on-surface mb-3 tracking-tight">Menunggu Pembayaran</h1>
+                <p class="text-on-surface-variant text-sm md:text-base font-medium max-w-lg mx-auto leading-relaxed">Silakan pindai kode QRIS atau selesaikan instruksi pembayaran di bawah ini untuk aktivasi instan.</p>
             </div>
-            <!-- Asymmetric Payment Layout -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <!-- Left Column: Instructions & Timer -->
-                <div class="lg:col-span-7 space-y-6">
-                    <!-- Timer Card -->
-                    <div
-                        class="bg-surface-container-low p-6 rounded-xl border border-surface-variant/20 flex items-center justify-between">
+
+            <!-- Main Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <!-- Timer Status -->
+                <div class="lg:col-span-12">
+                     <div class="bg-white p-4 rounded-2xl border border-outline-variant/30 flex items-center justify-between shadow-sm">
                         <div class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-error">schedule</span>
-                            <span class="font-bold text-on-surface">Selesaikan pembayaran dalam:</span>
-                        </div>
-                        <div class="text-xl font-extrabold font-headline text-error tabular-nums">23:59:54</div>
-                    </div>
-                    <!-- Bank Details Card -->
-                    <div class="bg-surface-container-lowest p-8 rounded-xl border border-surface-variant/20 shadow-sm">
-                        <p class="text-xs uppercase tracking-widest text-primary font-extrabold mb-6">Silahkan lakukan
-                            pembayaran ke:</p>
-                        <div class="flex items-start gap-6 mb-8 p-6 bg-surface-container-low rounded-xl">
-                            <div
-                                class="w-16 h-10 bg-white rounded flex items-center justify-center font-extrabold text-blue-700 shadow-sm">
-                                BCA</div>
-                            <div>
-                                <p class="text-on-surface-variant text-sm font-semibold">Nomor Rekening</p>
-                                <div class="flex items-center gap-2">
-                                    <h2 class="text-2xl font-extrabold font-headline tracking-wider text-on-surface">
-                                        1234567890</h2>
-                                    <span
-                                        class="material-symbols-outlined text-primary cursor-pointer text-xl">content_copy</span>
-                                </div>
-                                <p class="text-on-surface font-bold mt-1">a/n LeadFlow Pro</p>
+                            <div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-red-600 text-lg">schedule</span>
                             </div>
+                            <span class="text-sm font-bold text-on-surface">Batas Pembayaran</span>
                         </div>
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-end border-b border-surface-variant/30 pb-4">
-                                <p class="text-on-surface-variant font-semibold">Jumlah Total</p>
-                                <div class="text-right">
-                                    <span class="text-primary font-extrabold text-3xl font-headline">Rp 499.123</span>
-                                    <p class="text-xs text-error font-bold mt-1">Sertakan 3 angka terakhir agar otomatis
-                                        aktif</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Instructions Card -->
-                    <div class="bg-primary/5 p-6 rounded-xl border-l-4 border-primary">
-                        <div class="flex gap-4">
-                            <span class="material-symbols-outlined text-primary">info</span>
-                            <p class="text-primary font-semibold text-sm">Setelah bayar, akses tool akan otomatis aktif.
-                                Sistem kami akan memverifikasi pembayaran Anda dalam hitungan menit.</p>
-                        </div>
+                        <span id="timer" class="text-lg font-black text-red-600 tabular-nums tracking-tighter">05:00</span>
                     </div>
                 </div>
-                <!-- Right Column: QRIS & Confirmation -->
-                <div class="lg:col-span-5 space-y-6">
-                    <div
-                        class="bg-surface-container-lowest p-8 rounded-xl border border-surface-variant/20 shadow-sm text-center">
-                        <p class="text-xs uppercase tracking-widest text-on-surface-variant font-extrabold mb-6">Scan
-                            QRIS</p>
-                        <div
-                            class="bg-white p-4 rounded-xl border border-surface-variant/30 inline-block mb-6 shadow-sm">
-                            <img alt="QRIS payment code for LeadFlow Pro"
-                                class="w-64 h-64 mix-blend-multiply opacity-90"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDtDPgz3Q-hNZVlB6c6OPGTmOxxzMHAvWG4uATdfDlUUq0g7zK8w4nRdIWhjIj6II1lu3AAQmWicCX7YeQ2_Gb4lYoZnm3v146sdZhUXqgT_w-ti2GFB7r4jBIUUvZodTcA_c4WavYgoBIjAH3G5Vnv8jabZ-91UzeiPUmFgH5QD03eOfo4VtE4BXo5zdqDezP9a0nt6F7eDj3uHfy9WAGG_L6BO5zucwr7nVSUzCK-4uI3Mr7_nDiPhJ6AfT7KL3z5nP6kKf4n38" />
-                        </div>
-                        <p class="text-sm text-on-surface-variant mb-8 px-4 font-medium">Bisa menggunakan GoPay, OVO,
-                            Dana, LinkAja, atau Mobile Banking lainnya.</p>
-                        <div class="space-y-3">
-                            <button
-                                class="w-full bg-secondary text-on-secondary py-4 rounded-xl font-extrabold flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all">
-                                <span class="material-symbols-outlined"
-                                    style="font-variation-settings: 'FILL' 1;">chat</span>
-                                Konfirmasi via WhatsApp
-                            </button>
-                            <p class="text-xs text-on-surface-variant italic font-medium">Butuh bantuan? Tim CS kami
-                                siap membantu.</p>
-                        </div>
+
+                <!-- Payment Area -->
+                <div class="lg:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- QRIS CARD -->
+                    <div class="bg-white p-8 rounded-[2rem] border border-outline-variant/30 shadow-xl shadow-primary/5 text-center flex flex-col items-center justify-center">
+                        @if($transaction->method === 'QRIS')
+                            <p class="text-[10px] uppercase font-black text-primary tracking-[0.3em] mb-6">QRIS DIGITAL PAYMENT</p>
+                            <div class="bg-white p-4 rounded-3xl border-4 border-surface-container-low shadow-inner mb-6">
+                                <img alt="QRIS payment code" class="w-56 h-56 md:w-64 md:h-64" src="{{ $transaction->payment_url }}" />
+                            </div>
+                            <p class="text-[11px] font-bold text-on-surface-variant max-w-[280px] leading-relaxed">Scan QRIS di atas menggunakan aplikasi e-wallet <strong>(GOPAY, OVO, DANA, dll)</strong> atau <strong>M-Banking Anda</strong>.</p>
+                        @else
+                            <div class="py-12 flex flex-col items-center">
+                                <span class="material-symbols-outlined text-7xl text-primary mb-6">account_balance</span>
+                                <p class="text-[10px] uppercase font-black text-primary tracking-[0.3em] mb-4">{{ $transaction->method }} TRANSFER</p>
+                                <a href="{{ $transaction->payment_url }}" target="_blank"
+                                    class="inline-flex items-center justify-center px-8 bg-primary text-white py-4 rounded-2xl font-black gap-3 hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 group">
+                                    LIHAT INSTRUKSI BAYAR
+                                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                </a>
+                            </div>
+                        @endif
                     </div>
-                    <!-- Trust Badge -->
-                    <div class="flex items-center justify-center gap-2 text-on-surface-variant opacity-60">
-                        <span class="material-symbols-outlined text-sm">lock</span>
-                        <span class="text-[10px] font-extrabold uppercase tracking-widest">Secure Architectural Data
-                            Transaction</span>
+
+                    <!-- ORDER DETAILS CARD -->
+                    <div class="space-y-6">
+                        <div class="bg-surface-container-lowest p-8 rounded-[2rem] border border-outline-variant/30 shadow-sm">
+                            <p class="text-[10px] uppercase font-black text-on-surface-variant tracking-[0.3em] mb-6">DETAIL PESANAN</p>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center py-3 border-b border-outline-variant/20">
+                                    <p class="text-on-surface-variant text-xs font-bold uppercase">ID Transaksi</p>
+                                    <p class="text-on-surface font-black text-sm">#{{ $transaction->merchant_ref }}</p>
+                                </div>
+                                <div class="flex justify-between items-start py-3">
+                                    <p class="text-on-surface-variant text-xs font-bold uppercase">Total Tagihan</p>
+                                    <div class="text-right">
+                                        <p class="text-primary font-black text-3xl tracking-tighter">Rp {{ number_format($transaction->amount, 0, ',', '.') }}</p>
+                                        <div class="flex items-center justify-end gap-1 mt-1">
+                                            <span class="material-symbols-outlined text-green-600 text-xs">verified_user</span>
+                                            <p class="text-[9px] text-green-600 font-bold uppercase tracking-widest">Aktivasi Instan</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Trust / Support -->
+                        <div class="bg-primary/5 p-6 rounded-[1.5rem] border border-primary/10 flex gap-4 items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+                            </div>
+                            <p class="text-[11px] text-primary/80 font-bold leading-relaxed">Pembayaran Anda diproses secara aman. Lisensi premium akan dikirimkan ke email anda segera setelah transaksi diverifikasi.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <!-- Footer (Shared Component) -->
-    <footer class="bg-surface-container-low w-full py-12 px-6 border-t border-surface-variant/20">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            <div class="text-lg font-extrabold text-primary">LeadFlow Pro</div>
-            <div class="flex gap-8">
-                <a class="text-on-surface-variant hover:text-primary text-sm font-semibold transition-colors"
-                    href="#">Terms of Service</a>
-                <a class="text-on-surface-variant hover:text-primary text-sm font-semibold transition-colors"
-                    href="#">Privacy Policy</a>
-                <a class="text-on-surface-variant hover:text-primary text-sm font-semibold transition-colors"
-                    href="#">API Docs</a>
-                <a class="text-on-surface-variant hover:text-primary text-sm font-semibold transition-colors"
-                    href="#">Affiliate</a>
+
+    <footer class="bg-white border-t border-surface-container py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2 opacity-50">
+                    <span class="material-symbols-outlined text-sm">api</span>
+                    <span class="text-xs font-black tracking-tighter uppercase">Wamaps Cloud</span>
+                </div>
+                <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant opacity-60">
+                    <a href="#" class="hover:text-primary transition-colors">Bantuan</a>
+                    <a href="#" class="hover:text-primary transition-colors">Syarat & Ketentuan</a>
+                    <a href="#" class="hover:text-primary transition-colors">Kebijakan Privasi</a>
+                </div>
+                <p class="text-[10px] font-bold text-on-surface-variant opacity-40">© 2026 Wamaps. All rights reserved.</p>
             </div>
-            <p class="text-on-surface-variant text-xs font-medium">© 2024 LeadFlow Pro. Architectural Data Solutions.
-            </p>
         </div>
     </footer>
-    <!-- Bottom Navigation (Mobile Only) -->
-    <div
-        class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-2 md:hidden bg-white dark:bg-slate-900 border-t border-surface-variant/30 shadow-[0_-4px_20px_rgba(0,0,0,0.04)] z-50">
-        <div
-            class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high rounded-xl transition-all">
-            <span class="material-symbols-outlined">explore</span>
-            <span class="text-[10px] uppercase tracking-wider font-extrabold">Features</span>
-        </div>
-        <div
-            class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high rounded-xl transition-all">
-            <span class="material-symbols-outlined">payments</span>
-            <span class="text-[10px] uppercase tracking-wider font-extrabold">Pricing</span>
-        </div>
-        <div
-            class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high rounded-xl transition-all">
-            <span class="material-symbols-outlined">chat</span>
-            <span class="text-[10px] uppercase tracking-wider font-extrabold">WhatsApp</span>
-        </div>
-        <div
-            class="flex flex-col items-center justify-center bg-primary/10 text-primary rounded-xl p-2 active:scale-95 transition-all">
-            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
-            <span class="text-[10px] uppercase tracking-wider font-extrabold">Buy Now</span>
-        </div>
-    </div>
+
+    <script>
+        const merchantRef = "{{ $transaction->merchant_ref }}";
+        const checkStatusUrl = "/checkout/status/" + merchantRef;
+        const successUrl = "{{ route('checkout.success', $transaction->merchant_ref) }}";
+
+        // Timer Logic (5 Minutes)
+        let timeLeft = 300;
+        const timerEl = document.getElementById('timer');
+        
+        const countdown = setInterval(() => {
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timerEl.textContent = "00:00 (Kadaluarsa)";
+                timerEl.classList.add('animate-pulse');
+            } else {
+                timeLeft--;
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerEl.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+        }, 1000);
+
+        async function checkPaymentStatus() {
+            try {
+                const response = await fetch(checkStatusUrl);
+                const data = await response.json();
+                
+                if (data.status === 'PAID') {
+                    window.location.href = successUrl;
+                }
+            } catch (error) {
+                console.error("Error checking status:", error);
+            }
+        }
+
+        // Poll every 3 seconds
+        const pollInterval = setInterval(checkPaymentStatus, 3000);
+    </script>
 </body>
 
 </html>
