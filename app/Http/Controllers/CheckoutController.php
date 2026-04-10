@@ -49,7 +49,7 @@ class CheckoutController extends Controller
             'api_key' => $api_key,
         ]);
 
-        $subtotal = 500;
+        $subtotal = 149000;
         $admin_fee = 0;
 
         if ($response->successful() && isset($response->json()['data'])) {
@@ -124,14 +124,14 @@ class CheckoutController extends Controller
     public function downloadQris($merchant_ref)
     {
         $transaction = Transaction::where('merchant_ref', $merchant_ref)->firstOrFail();
-        
+
         if (!$transaction->payment_url || $transaction->method !== 'QRIS') {
             return back()->with('error', 'URL QRIS tidak ditemukan.');
         }
 
         try {
             $imageContent = \Illuminate\Support\Facades\Http::get($transaction->payment_url)->body();
-            
+
             return response()->streamDownload(function () use ($imageContent) {
                 echo $imageContent;
             }, 'QRIS-Wamaps-' . $merchant_ref . '.png');
