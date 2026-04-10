@@ -53,7 +53,7 @@ class WebhookController extends Controller
                 // User Activation Logic
                 $email = $transaction->customer_email;
                 $name = $transaction->customer_name;
-                $password = '12345678'; // Temporary password
+                $password = strtolower(\Illuminate\Support\Str::random(8));
 
                 $user = User::where('email', $email)->first();
                 $is_new_user = false;
