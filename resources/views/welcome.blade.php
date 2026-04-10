@@ -80,6 +80,8 @@
                     <a href="{{ route('checkout') }}"
                         class="bg-primary text-on-primary px-8 py-4 rounded-xl text-lg font-bold flex items-center justify-center gap-2 hover:bg-primary-container transition-all">
                         Beli Sekarang
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
                         </svg>
                     </a>
                     <a href="#features"
@@ -944,6 +946,7 @@
             fbq('init', '2691160627922371');
             fbq('track', 'PageView');
         }, 2000);
+    });
     </script>
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block"

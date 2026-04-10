@@ -46,6 +46,11 @@
     <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|js|css|swf|mp4|svg)$">
         Header set Cache-Control "max-age=31536000, public"
     </FilesMatch>
+    
+    # Aggressive caching for Vite assets (hashed)
+    <FilesMatch "[\.-][0-9a-zA-Z]{8,}\.(js|css)$">
+        Header set Cache-Control "max-age=31536000, public, immutable"
+    </FilesMatch>
 </IfModule>
 
 # Gzip compression
