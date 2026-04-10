@@ -271,7 +271,7 @@
                         </button>
                         <p class="text-center text-[11px] text-on-surface-variant px-4 leading-relaxed">
                             Dengan menekan tombol di atas, Anda menyetujui <a
-                                class="underline text-primary hover:text-primary/80" href="#">Syarat &amp; Ketentuan</a>
+                                class="underline text-primary hover:text-primary/80" href="{{ route('terms') }}">Syarat &amp; Ketentuan</a>
                             serta Kebijakan Privasi Wamaps.
                         </p>
                     </div>
@@ -296,9 +296,9 @@
             class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-on-surface-variant text-sm">
             <span>© 2026 Wamaps. Semua Hak Dilindungi.</span>
             <div class="flex space-x-6 mt-4 md:mt-0">
-                <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
-                <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
-                <a class="hover:text-primary transition-colors" href="#">Support</a>
+                <a class="hover:text-primary transition-colors" href="{{ route('privacy') }}">Privacy Policy</a>
+                <a class="hover:text-primary transition-colors" href="{{ route('terms') }}">Terms of Service</a>
+                <a class="hover:text-primary transition-colors" href="{{ route('support') }}">Support</a>
             </div>
         </div>
     </footer>

@@ -969,7 +969,11 @@
             <div class="border-t border-slate-200/60 pt-8 flex flex-col lg:flex-row justify-between items-center gap-6">
                 <div class="text-on-surface-variant text-sm text-center lg:text-left">
                     © 2026 Wamaps. All rights reserved.
-
+                </div>
+                <div class="flex space-x-6 text-on-surface-variant text-sm mt-4 lg:mt-0">
+                    <a class="hover:text-primary transition-colors" href="{{ route('privacy') }}">Privacy Policy</a>
+                    <a class="hover:text-primary transition-colors" href="{{ route('terms') }}">Terms of Service</a>
+                    <a class="hover:text-primary transition-colors" href="{{ route('support') }}">Support</a>
                 </div>
             </div>
         </div>
