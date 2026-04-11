@@ -207,7 +207,7 @@
                         @php
                             $fee_fixed = (float) $channel['fee_amount'];
                             $fee_percent = (float) $channel['fee_percent'];
-                            $subtotal = 149000;
+                            $subtotal = 500;
                             $calculated_fee = $fee_fixed + ($subtotal * ($fee_percent / 100));
                         @endphp
                         <label class="relative group cursor-pointer">
@@ -321,7 +321,7 @@
         </div>
     </footer>
     <script>
-        const subtotal = 149000;
+        const subtotal = 500;
         const adminFeeEl = document.getElementById('admin_fee');
         const totalPriceEl = document.getElementById('total_price');
 

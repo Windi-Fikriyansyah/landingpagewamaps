@@ -52,7 +52,7 @@ class CheckoutController extends Controller
             'api_key' => $api_key,
         ]);
 
-        $subtotal = 149000;
+        $subtotal = 500;
         $admin_fee = 0;
 
         if ($response->successful() && isset($response->json()['data'])) {
