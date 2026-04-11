@@ -33,6 +33,17 @@
                 transform: translateY(0);
             }
         }
+
+        /* Fix for icon text showing as text */
+        .material-symbols-outlined {
+            vertical-align: middle;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            white-space: nowrap;
+            font-family: 'Material Symbols Outlined' !important;
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
