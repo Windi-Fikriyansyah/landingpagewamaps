@@ -140,13 +140,22 @@ class CheckoutController extends Controller
         }
 
         try {
-            $imageContent = \Illuminate\Support\Facades\Http::get($transaction->payment_url)->body();
+            $response = \Illuminate\Support\Facades\Http::withHeaders([
+                'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            ])->get($transaction->payment_url);
 
-            return response()->streamDownload(function () use ($imageContent) {
-                echo $imageContent;
-            }, 'QRIS-Wamaps-' . $merchant_ref . '.png');
+            if ($response->successful()) {
+                $imageContent = $response->body();
+                $contentType = $response->header('Content-Type') ?? 'image/png';
+
+                return response($imageContent)
+                    ->header('Content-Type', $contentType)
+                    ->header('Content-Disposition', 'attachment; filename="QRIS-Wamaps-' . $merchant_ref . '.png"');
+            }
+
+            return redirect($transaction->payment_url);
         } catch (\Exception $e) {
-            // Jika gagal di-proxy, redirect saja URL-nya ke page aslinya
+            Log::error("QRIS Download Error: " . $e->getMessage());
             return redirect($transaction->payment_url);
         }
     }
