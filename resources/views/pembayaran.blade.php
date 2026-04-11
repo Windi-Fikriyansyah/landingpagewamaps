@@ -204,17 +204,28 @@
                                 <strong>M-Banking Anda</strong>.
                             </p>
                         @else
-                            <div class="py-12 flex flex-col items-center">
-                                <span class="material-symbols-outlined text-7xl text-primary mb-6">account_balance</span>
-                                <p class="text-[10px] uppercase font-black text-primary tracking-[0.3em] mb-4">
-                                    {{ $transaction->method }} TRANSFER
-                                </p>
-                                <a href="{{ $transaction->payment_url }}" target="_blank"
-                                    class="inline-flex items-center justify-center px-8 bg-primary text-white py-4 rounded-2xl font-black gap-3 hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 group">
-                                    LIHAT INSTRUKSI BAYAR
-                                    <span
-                                        class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                                </a>
+                            <div class="py-6 md:py-10 flex flex-col items-center">
+                                <div class="w-16 h-16 md:w-20 md:h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                    <span class="material-symbols-outlined text-4xl md:text-5xl text-primary">account_balance</span>
+                                </div>
+                                <p class="text-[10px] uppercase font-black text-primary tracking-[0.3em] mb-6 text-center">{{ $transaction->method }} TRANSFER</p>
+                                
+                                <div class="w-full max-w-md px-4">
+                                    <div class="bg-surface-container-low p-5 md:p-8 rounded-[2rem] border-2 border-dashed border-primary/30 text-center">
+                                        <p class="text-[10px] md:text-xs font-bold text-on-surface-variant uppercase mb-4 tracking-widest">Nomor Virtual Account</p>
+                                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                                            <span id="va-number" class="text-2xl sm:text-3xl md:text-4xl font-black text-primary tracking-wider break-all leading-tight">{{ $transaction->payment_number ?? '--------' }}</span>
+                                            <button onclick="copyToClipboard('va-number')" class="flex items-center justify-center p-3 bg-white rounded-2xl shadow-sm hover:shadow-md active:scale-95 transition-all text-primary border border-primary/10 group flex-shrink-0">
+                                                <span class="material-symbols-outlined text-xl group-hover:rotate-12 transition-transform">content_copy</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-8 bg-blue-50/50 p-4 rounded-2xl border border-blue-100/50 max-w-sm">
+                                    <p class="text-[11px] font-bold text-on-surface-variant text-center leading-relaxed">
+                                        Gunakan nomor Virtual Account di atas untuk melakukan transfer melalui <br class="hidden sm:block"><strong>Mobile Banking, ATM, atau Internet Banking</strong> Anda.
+                                    </p>
+                                </div>
                             </div>
                         @endif
                     </div>
@@ -312,6 +323,15 @@
 
         // Poll every 3 seconds
         const pollInterval = setInterval(checkPaymentStatus, 3000);
+
+        function copyToClipboard(elementId) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Nomor Virtual Account disalin ke clipboard!');
+            }).catch(err => {
+                console.error('Gagal menyalin: ', err);
+            });
+        }
     </script>
 </body>
 

@@ -95,6 +95,7 @@ class CheckoutController extends Controller
                 'plan_sku' => 'premium',
                 'status' => 'UNPAID',
                 'payment_url' => $data['qr_image'] ?? $data['checkout_url'] ?? null,
+                'payment_number' => $data['nomor_va'] ?? $data['va_number'] ?? $data['pay_code'] ?? $data['payment_no'] ?? null,
                 'method' => $request->payment_method,
             ]);
 

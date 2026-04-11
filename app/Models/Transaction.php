@@ -17,6 +17,7 @@ class Transaction extends Model
         'status',
         'method',
         'payment_url',
+        'payment_number',
         'customer_name',
         'customer_email',
         'paid_at'
