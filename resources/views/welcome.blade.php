@@ -4518,6 +4518,7 @@
         <section class="pt-32 pb-20">
             <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-8">
+                    /* test */
                     <span
                         class="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold tracking-widest uppercase">Dipakai
                         500+ Pebisnis Indonesia</span>
