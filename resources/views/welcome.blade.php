@@ -4829,11 +4829,30 @@
                     <!-- Auto Scraping Google Maps -->
                     <div
                         class="bg-white dark:bg-slate-900 p-6 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                        <div
-                            class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden flex items-center justify-center border border-slate-100 dark:border-slate-700">
-                            <img src="{{ asset('searchleads.png') }}" alt="Auto Scraping Google Maps" loading="lazy"
-                                decoding="async"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300 cursor-pointer"
+                            onclick="const v = this.querySelector('video'); const o = this.querySelector('.play-overlay'); if(v.paused){v.play(); v.controls=true; o.classList.add('hidden')} else {v.pause(); v.controls=false; o.classList.remove('hidden')}">
+                            <!-- Browser Frame Placeholder -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-6 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center px-3 gap-1 z-10">
+                                <div class="w-1.5 h-1.5 rounded-full bg-red-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-amber-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-green-400/50"></div>
+                            </div>
+                            <video playsinline preload="metadata" poster="{{asset('autoscraping.webp')}}"
+                                class="w-full h-full object-cover pt-6 group-hover:scale-105 transition-transform duration-500"
+                                onended="this.controls=false; this.parentElement.querySelector('.play-overlay').classList.remove('hidden'); this.load();">
+                                <source src="https://ik.imagekit.io/bzq0b2kjq/fitur%20scrape.mp4" type="video/mp4">
+                            </video>
+                            <!-- Play Button Overlay -->
+                            <div
+                                class="play-overlay absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-all duration-300 pt-6">
+                                <div
+                                    class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300 border-2 border-white/20">
+                                    <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                         <h3 class="text-lg font-bold mb-3 text-on-surface group-hover:text-primary transition-colors">
                             Auto Scraping Google Maps</h3>
@@ -4841,14 +4860,70 @@
                             lokasi dan keyword target secara otomatis dalam hitungan detik.</p>
                     </div>
 
+                    <div
+                        class="bg-white dark:bg-slate-900 p-6 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300 cursor-pointer"
+                            onclick="const v = this.querySelector('video'); const o = this.querySelector('.play-overlay'); if(v.paused){v.play(); v.controls=true; o.classList.add('hidden')} else {v.pause(); v.controls=false; o.classList.remove('hidden')}">
+                            <!-- Browser Frame Placeholder -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-6 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center px-3 gap-1 z-10">
+                                <div class="w-1.5 h-1.5 rounded-full bg-red-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-amber-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-green-400/50"></div>
+                            </div>
+                            <video playsinline preload="metadata" poster="{{asset('linkedin.webp')}}"
+                                class="w-full h-full object-cover pt-6 group-hover:scale-105 transition-transform duration-500"
+                                onended="this.controls=false; this.parentElement.querySelector('.play-overlay').classList.remove('hidden'); this.load();">
+                                <source src="https://ik.imagekit.io/bzq0b2kjq/0419%20(4)(3).mp4" type="video/mp4">
+                            </video>
+                            <!-- Play Button Overlay -->
+                            <div
+                                class="play-overlay absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-all duration-300 pt-6">
+                                <div
+                                    class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300 border-2 border-white/20">
+                                    <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold mb-3 text-on-surface group-hover:text-primary transition-colors">
+                            Auto Scraping Linkedln</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">
+                            Kumpulkan data profil profesional, perusahaan, staff, dan leads potensial dari LinkedIn
+                            secara
+                            otomatis berdasarkan staff perusahaan, cari user, komentar posting, detail perusahaan,
+                            koneksi anda, dan lokasi target.
+                        </p>
+                    </div>
+
                     <!-- Database Leads Rapi & Valid -->
                     <div
                         class="bg-white dark:bg-slate-900 p-6 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                        <div
-                            class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden flex items-center justify-center border border-slate-100 dark:border-slate-700">
-                            <img src="{{ asset('dataleads.png') }}" alt="Database Leads Rapi & Valid" loading="lazy"
-                                decoding="async"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300 cursor-pointer"
+                            onclick="const v = this.querySelector('video'); const o = this.querySelector('.play-overlay'); if(v.paused){v.play(); v.controls=true; o.classList.add('hidden')} else {v.pause(); v.controls=false; o.classList.remove('hidden')}">
+                            <!-- Browser Frame Placeholder -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-6 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center px-3 gap-1 z-10">
+                                <div class="w-1.5 h-1.5 rounded-full bg-red-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-amber-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-green-400/50"></div>
+                            </div>
+                            <video playsinline preload="metadata" poster="{{asset('leadsdata.webp')}}"
+                                class="w-full h-full object-cover pt-6 group-hover:scale-105 transition-transform duration-500"
+                                onended="this.controls=false; this.parentElement.querySelector('.play-overlay').classList.remove('hidden'); this.load();">
+                                <source src="https://ik.imagekit.io/bzq0b2kjq/0419%20(2).mp4" type="video/mp4">
+                            </video>
+                            <!-- Play Button Overlay -->
+                            <div
+                                class="play-overlay absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-all duration-300 pt-6">
+                                <div
+                                    class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300 border-2 border-white/20">
+                                    <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                         <h3 class="text-lg font-bold mb-3 text-on-surface group-hover:text-primary transition-colors">
                             Database Leads Rapi & Valid</h3>
@@ -4859,11 +4934,29 @@
                     <!-- WhatsApp Broadcast Otomatis -->
                     <div
                         class="bg-white dark:bg-slate-900 p-6 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                        <div
-                            class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden flex items-center justify-center border border-slate-100 dark:border-slate-700">
-                            <img src="{{ asset('broadcast.png') }}" alt="WhatsApp Broadcast Otomatis" loading="lazy"
-                                decoding="async"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300 cursor-pointer"
+                            onclick="const v = this.querySelector('video'); const o = this.querySelector('.play-overlay'); if(v.paused){v.play(); v.controls=true; o.classList.add('hidden')} else {v.pause(); v.controls=false; o.classList.remove('hidden')}">
+                            <!-- Browser Frame Placeholder -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-6 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center px-3 gap-1 z-10">
+                                <div class="w-1.5 h-1.5 rounded-full bg-red-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-amber-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-green-400/50"></div>
+                            </div>
+                            <video playsinline preload="metadata" poster="{{asset('wabroad.webp')}}"
+                                class="w-full h-full object-cover pt-6 group-hover:scale-105 transition-transform duration-500"
+                                onended="this.controls=false; this.parentElement.querySelector('.play-overlay').classList.remove('hidden'); this.load();">
+                                <source src="https://ik.imagekit.io/bzq0b2kjq/0419%20(4)(1).mp4" type="video/mp4">
+                            </video>
+                            <div
+                                class="play-overlay absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-all duration-300 pt-6">
+                                <div
+                                    class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300 border-2 border-white/20">
+                                    <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                         <h3 class="text-lg font-bold mb-3 text-on-surface group-hover:text-primary transition-colors">
                             WhatsApp Broadcast Otomatis</h3>
@@ -4886,11 +4979,29 @@
                     <!-- Auto Post ke Banyak Grup Facebook -->
                     <div
                         class="bg-white dark:bg-slate-900 p-6 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                        <div
-                            class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden flex items-center justify-center border border-slate-100 dark:border-slate-700">
-                            <img src="{{ asset('bonus.png') }}" alt="Auto Post ke Banyak Grup Facebook" loading="lazy"
-                                decoding="async"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300 cursor-pointer"
+                            onclick="const v = this.querySelector('video'); const o = this.querySelector('.play-overlay'); if(v.paused){v.play(); v.controls=true; o.classList.add('hidden')} else {v.pause(); v.controls=false; o.classList.remove('hidden')}">
+                            <!-- Browser Frame Placeholder -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-6 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center px-3 gap-1 z-10">
+                                <div class="w-1.5 h-1.5 rounded-full bg-red-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-amber-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-green-400/50"></div>
+                            </div>
+                            <video playsinline preload="metadata" poster="{{asset('autopost.webp')}}"
+                                class="w-full h-full object-cover pt-6 group-hover:scale-105 transition-transform duration-500"
+                                onended="this.controls=false; this.parentElement.querySelector('.play-overlay').classList.remove('hidden'); this.load();">
+                                <source src="https://ik.imagekit.io/bzq0b2kjq/0419%20(4)(2).mp4" type="video/mp4">
+                            </video>
+                            <div
+                                class="play-overlay absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-all duration-300 pt-6">
+                                <div
+                                    class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300 border-2 border-white/20">
+                                    <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                         <h3 class="text-lg font-bold mb-3 text-on-surface group-hover:text-primary transition-colors">
                             Auto Post ke Banyak Grup Facebook</h3>
@@ -4901,11 +5012,30 @@
                     <!-- Multiple Message Templates -->
                     <div
                         class="bg-white dark:bg-slate-900 p-6 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-                        <div
-                            class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden flex items-center justify-center border border-slate-100 dark:border-slate-700">
-                            <img src="{{ asset('pesan.png') }}" alt="Multiple Message Templates" loading="lazy"
-                                decoding="async"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-800 shadow-inner group-hover:shadow-md transition-all duration-300 cursor-pointer"
+                            onclick="const v = this.querySelector('video'); const o = this.querySelector('.play-overlay'); if(v.paused){v.play(); v.controls=true; o.classList.add('hidden')} else {v.pause(); v.controls=false; o.classList.remove('hidden')}">
+                            <!-- Browser Frame Placeholder -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-6 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center px-3 gap-1 z-10">
+                                <div class="w-1.5 h-1.5 rounded-full bg-red-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-amber-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-green-400/50"></div>
+                            </div>
+                            <video playsinline preload="metadata" poster="{{asset('multiple.webp')}}"
+                                class="w-full h-full object-cover pt-6 group-hover:scale-105 transition-transform duration-500"
+                                onended="this.controls=false; this.parentElement.querySelector('.play-overlay').classList.remove('hidden'); this.load();">
+                                <source src="https://ik.imagekit.io/bzq0b2kjq/0419%20(4).mp4" type="video/mp4">
+                            </video>
+                            <!-- Play Button Overlay -->
+                            <div
+                                class="play-overlay absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-all duration-300 pt-6">
+                                <div
+                                    class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300 border-2 border-white/20">
+                                    <svg class="w-6 h-6 fill-current ml-1" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                         <h3 class="text-lg font-bold mb-3 text-on-surface group-hover:text-primary transition-colors">
                             Multiple Message Templates</h3>
@@ -5289,8 +5419,8 @@
                             <a href="{{ route('checkout') }}"
                                 class="flex items-center justify-center text-center gap-4 bg-white hover:bg-slate-100 text-primary px-10 py-6 rounded-2xl text-xl md:text-2xl font-black shadow-2xl shadow-black/20 transition-all hover:-translate-y-1 active:scale-[0.98] group">
                                 Klaim Akses Lifetime Saya Sekarang
-                                <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform h-shrink-0" fill="none"
-                                    stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform h-shrink-0"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
                                         d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                                 </svg>
