@@ -4522,12 +4522,13 @@
                         class="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold tracking-widest uppercase">Dipakai
                         500+ Pebisnis Indonesia</span>
                     <h1 class="text-5xl lg:text-6xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
-                        Dapatkan 500+ Leads <span class="text-secondary">WhatsApp Bisnis Aktif Perhari</span> &amp;
-                        Hanya Dalam
-                        <span class="text-primary">1 Klik!</span>
+                        Temukan Ribuan <span class="text-secondary">Prospek Bisnis</span>
+                        Dalam Hitungan
+                        <span class="text-primary">Menit</span>
                     </h1>
                     <p class="text-lg text-on-surface-variant max-w-xl leading-relaxed">
-                        Ambil leads bisnis sesuai target, simpan otomatis, dan kirim broadcast WhatsApp tanpa ribet,
+                        Ambil prospek bisnis dari Google Maps secara otomatis, simpan otomatis, dan langsung kirim
+                        broadcast WhatsApp tanpa ribet,
                         tanpa
                         coding, dalam hitungan menit.
                     </p>
