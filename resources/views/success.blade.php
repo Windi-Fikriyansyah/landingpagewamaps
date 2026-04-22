@@ -81,8 +81,9 @@
             </div>
 
             <h1 class="text-3xl font-extrabold text-slate-900 mb-4 tracking-tight">Pembayaran Lunas!</h1>
-            <p class="text-slate-500 mb-10 leading-relaxed">Selamat! Akses <strong>Wamaps Lifetime Access</strong> Anda
-                telah diaktifkan secara otomatis.</p>
+            <p class="text-slate-500 mb-10 leading-relaxed">Selamat! Akses
+                <strong>{{ $transaction->plan_sku === 'premium_ekspor' ? 'Wamaps Exporter Mega Bundle' : 'Wamaps Lifetime Pro Access' }}</strong>
+                Anda telah diaktifkan secara otomatis.</p>
 
             <!-- Order Details -->
             <div class="bg-slate-50 rounded-3xl p-6 mb-10 text-left border border-slate-100">
@@ -92,7 +93,8 @@
                 </div>
                 <div class="flex justify-between items-center mb-4">
                     <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Paket</span>
-                    <span class="text-sm font-bold text-slate-700">Lifetime Pro Access</span>
+                    <span
+                        class="text-sm font-bold text-slate-700">{{ $transaction->plan_sku === 'premium_ekspor' ? 'Exporter Mega Bundle' : 'Lifetime Pro Access' }}</span>
                 </div>
                 <div class="flex justify-between items-center">
                     <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Status</span>

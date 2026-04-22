@@ -35,6 +35,29 @@ class CheckoutController extends Controller
         return view('checkout', compact('channels'));
     }
 
+
+    public function index_ekspor()
+    {
+        $merchant_id = config('services.wijayapay.merchant_id');
+        $api_key = config('services.wijayapay.api_key');
+
+        $response = Http::get("https://wijayapay.com/api/get-payment", [
+            'code_merchant' => $merchant_id,
+            'api_key' => $api_key,
+        ]);
+
+        $channels = [];
+        if ($response->successful() && isset($response->json()['data'])) {
+            $channels = collect($response->json()['data'])
+                ->where('status', 'active')
+                ->sortByDesc(fn($channel) => $channel['code'] === 'QRIS')
+                ->values()
+                ->all();
+        }
+
+        return view('checkout_ekspor', compact('channels'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -110,6 +133,100 @@ class CheckoutController extends Controller
                 'customer_email' => $request->email,
                 'amount' => $total_amount,
                 'plan_sku' => 'premium',
+                'status' => 'UNPAID',
+                'payment_url' => $data['qr_image'] ?? $data['checkout_url'] ?? null,
+                'payment_number' => $data['nomor_va'] ?? $data['va_number'] ?? $data['pay_code'] ?? $data['payment_no'] ?? null,
+                'method' => $request->payment_method,
+            ]);
+
+            // Send Invoice Email to Customer
+            try {
+                Mail::to($transaction->customer_email)->send(new InvoiceMail($transaction));
+            } catch (\Exception $e) {
+                Log::error("Failed to send invoice email: " . $e->getMessage());
+            }
+
+            return redirect()->route('pembayaran', $merchant_ref);
+        }
+
+        return back()->with('error', 'Gagal membuat transaksi: ' . ($result['message'] ?? 'Respons tidak valid dari WijayaPay.'));
+    }
+
+    public function store_ekspor(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'payment_method' => 'required|string',
+        ], [
+            'name.required' => 'Nama wajib diisi',
+            'name.string' => 'Nama harus berupa teks',
+            'name.max' => 'Nama maksimal 255 karakter',
+
+            'email.required' => 'Email wajib diisi',
+            'email.email' => 'Format email tidak valid',
+
+            'payment_method.required' => 'Metode pembayaran wajib dipilih',
+            'payment_method.string' => 'Metode pembayaran tidak valid',
+        ]);
+
+        $merchant_id = config('services.wijayapay.merchant_id');
+        $api_key = config('services.wijayapay.api_key');
+
+        // Fetch live fees again to prevent user tampering with frontend values
+        $response = Http::get("https://wijayapay.com/api/get-payment", [
+            'code_merchant' => $merchant_id,
+            'api_key' => $api_key,
+        ]);
+
+        $subtotal = 239000;
+        $admin_fee = 0;
+
+        if ($response->successful() && isset($response->json()['data'])) {
+            $channel = collect($response->json()['data'])->where('code', $request->payment_method)->first();
+            if ($channel) {
+                $fee_fixed = (float) $channel['fee_amount'];
+                $fee_percent = (float) $channel['fee_percent'];
+                $admin_fee = $fee_fixed + ($subtotal * ($fee_percent / 100));
+
+                // Tambahan biaya sesuai request user
+                if ($request->payment_method === 'QRIS') {
+                    $admin_fee += 200;
+                } else {
+                    $admin_fee += 500;
+                }
+            }
+        }
+
+        $merchant_ref = 'WAM-' . strtoupper(Str::random(10));
+        $total_amount = round($subtotal + $admin_fee);
+
+        // Signature: md5(code_merchant + api_key + ref_id)
+        $signature = md5($merchant_id . $api_key . $merchant_ref);
+
+        $response = Http::withHeaders([
+            'X-Signature' => $signature,
+        ])->post('https://wijayapay.com/api/transaction/create', [
+                    'code_merchant' => $merchant_id,
+                    'api_key' => $api_key,
+                    'ref_id' => $merchant_ref,
+                    'code_payment' => $request->payment_method,
+                    'nominal' => $total_amount,
+                    'callback_url' => rtrim(config('app.url'), '/') . '/webhook/wijayapay',
+                ]);
+
+        $result = $response->json();
+        Log::info("WijayaPay Create Transaction Response: ", ['result' => $result]);
+
+        if ($response->successful() && isset($result['success']) && $result['success']) {
+            $data = $result['data'];
+
+            $transaction = Transaction::create([
+                'merchant_ref' => $merchant_ref,
+                'customer_name' => $request->name,
+                'customer_email' => $request->email,
+                'amount' => $total_amount,
+                'plan_sku' => 'premium_ekspor',
                 'status' => 'UNPAID',
                 'payment_url' => $data['qr_image'] ?? $data['checkout_url'] ?? null,
                 'payment_number' => $data['nomor_va'] ?? $data['va_number'] ?? $data['pay_code'] ?? $data['payment_no'] ?? null,
