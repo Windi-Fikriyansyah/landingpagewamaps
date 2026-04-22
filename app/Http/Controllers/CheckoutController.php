@@ -249,6 +249,11 @@ class CheckoutController extends Controller
     public function pembayaran($merchant_ref)
     {
         $transaction = Transaction::where('merchant_ref', $merchant_ref)->firstOrFail();
+
+        if ($transaction->plan_sku === 'premium_ekspor') {
+            return view('pembayaran_ekspor', compact('transaction'));
+        }
+
         return view('pembayaran', compact('transaction'));
     }
 
