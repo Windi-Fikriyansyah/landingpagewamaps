@@ -4481,8 +4481,27 @@
     <!-- Meta Pixel Code -->
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=2691160627922371&ev=PageView&noscript=1" /></noscript>
-    <!-- End Meta Pixel Code -->
+    <!-- Crisp Live Chat -->
+    @if (config('services.crisp.id'))
+        <script type="text/javascript">
+            window.$crisp = [];
+            window.CRISP_WEBSITE_ID = "{{ config('services.crisp.id') }}";
+            (function() {
+                // Set bahasa ke Indonesia
+                window.$crisp.push(["set", "common:locale", ["id"]]);
+
+                d = document;
+                s = d.createElement("script");
+                s.src = "https://client.crisp.chat/l.js";
+                s.async = 1;
+                d.getElementsByTagName("head")[0].appendChild(s);
+            })();
+        </script>
+    @endif
 </head>
+
+
+
 
 <body class="bg-surface text-on-background antialiased">
     <!-- TopNavBar -->
@@ -5509,7 +5528,8 @@
             </div>
         </div>
     </footer>
-    <!-- Sticky Mobile Checkout Bar -->
+    <!-- Sticky Mobile Checkout Bar (Commented Out) -->
+    {{-- 
     <div
         class="fixed bottom-0 left-0 w-full md:hidden bg-primary/95 backdrop-blur-md border-t border-white/20 z-[100] px-4 py-2.5 pb-safe shadow-[0_-10px_40px_rgba(20,94,252,0.3)]">
         <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
@@ -5538,6 +5558,8 @@
             </a>
         </div>
     </div>
+    --}}
+
     <script>
         window.addEventListener('load', function () {
             setTimeout(function () {

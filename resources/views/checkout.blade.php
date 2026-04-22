@@ -130,8 +130,31 @@
     </script>
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=2691160627922371&ev=PageView&noscript=1" /></noscript>
-    <!-- End Meta Pixel Code -->
+    <!-- Crisp Live Chat -->
+    @if (config('services.crisp.id'))
+        <script type="text/javascript">
+            window.$crisp = [];
+            window.CRISP_WEBSITE_ID = "{{ config('services.crisp.id') }}";
+            (function() {
+                // Set bahasa ke Indonesia
+                window.$crisp.push(["set", "common:locale", ["id"]]);
+
+                // Posisi agar tidak terlalu mepet di mobile
+                if (window.matchMedia("(max-width: 1024px)").matches) {
+                    window.$crisp.push(["set", "chat:offset:bottom", [75]]);
+                    window.$crisp.push(["set", "chat:offset:right", [16]]);
+                }
+
+                d = document;
+                s = d.createElement("script");
+                s.src = "https://client.crisp.chat/l.js";
+                s.async = 1;
+                d.getElementsByTagName("head")[0].appendChild(s);
+            })();
+        </script>
+    @endif
 </head>
+
 
 <body class="bg-surface text-on-surface">
     <!-- Top Navigation -->
