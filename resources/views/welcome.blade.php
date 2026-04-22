@@ -4486,7 +4486,7 @@
         <script type="text/javascript">
             window.$crisp = [];
             window.CRISP_WEBSITE_ID = "{{ config('services.crisp.id') }}";
-            (function() {
+            (function () {
                 // Set bahasa ke Indonesia
                 window.$crisp.push(["set", "common:locale", ["id"]]);
 
@@ -5244,15 +5244,17 @@
                                     <span>Multiple Message Templates</span>
                                 </li>
 
-                                <li class="flex items-center gap-4 text-base font-medium group/item text-white/80">
+                                <li class="flex items-center gap-4 text-base font-medium group/item">
                                     <div
-                                        class="w-6 h-6 bg-white/5 text-white/30 rounded-full flex items-center justify-center border border-white/10 group-hover/item:scale-110 transition-transform">
+                                        class="w-6 h-6 bg-white/20 text-white rounded-full flex items-center justify-center border border-white/20 group-hover/item:scale-110 transition-transform">
                                         <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                                             <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                                         </svg>
                                     </div>
                                     <span>Free Update Selamanya</span>
                                 </li>
+
+
                             </ul>
                             <div class="mt-6">
                                 <a href="{{ route('checkout') }}"
@@ -5529,7 +5531,7 @@
         </div>
     </footer>
     <!-- Sticky Mobile Checkout Bar (Commented Out) -->
-    {{-- 
+    {{--
     <div
         class="fixed bottom-0 left-0 w-full md:hidden bg-primary/95 backdrop-blur-md border-t border-white/20 z-[100] px-4 py-2.5 pb-safe shadow-[0_-10px_40px_rgba(20,94,252,0.3)]">
         <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
