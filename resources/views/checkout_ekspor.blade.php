@@ -125,11 +125,10 @@
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '943948765000391');
-        fbq('track', 'PageView');
         fbq('track', 'InitiateCheckout');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=943948765000391&ev=PageView&noscript=1" /></noscript>
+            src="https://www.facebook.com/tr?id=943948765000391&ev=InitiateCheckout&noscript=1" /></noscript>
     <!-- Crisp Live Chat -->
     @if (config('services.crisp.id'))
         <script type="text/javascript">
