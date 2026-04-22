@@ -113,14 +113,21 @@
     </style>
     <!-- Meta Pixel Code -->
     <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t, s)
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
@@ -134,7 +141,7 @@
         <script type="text/javascript">
             window.$crisp = [];
             window.CRISP_WEBSITE_ID = "{{ config('services.crisp.id') }}";
-            (function () {
+            (function() {
                 // Set bahasa ke Indonesia
                 window.$crisp.push(["set", "common:locale", ["id"]]);
 
@@ -220,15 +227,16 @@
                                     Lengkap</label>
                                 <input
                                     class="w-full px-4 py-3 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder-on-surface-variant/50"
-                                    id="full_name" name="name" type="text" placeholder="Untuk aktivasi akun" required />
+                                    id="full_name" name="name" type="text" placeholder="Untuk aktivasi akun"
+                                    required />
                             </div>
                             <div class="flex flex-col">
                                 <label class="text-sm font-semibold text-on-surface mb-2" for="email">Email
                                     Address</label>
                                 <input
                                     class="w-full px-4 py-3 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder-on-surface-variant/50"
-                                    id="email" name="email" type="email" placeholder="Akses akan dikirim ke email ini"
-                                    required />
+                                    id="email" name="email" type="email"
+                                    placeholder="Akses akan dikirim ke email ini" required />
                             </div>
                         </div>
                         <section class="mt-10 pt-4">
@@ -243,17 +251,18 @@
                                     $other_channels = collect($channels)->reject(fn($c) => $c['code'] === 'QRIS');
                                 @endphp
 
-                                @if($qris_channel)
+                                @if ($qris_channel)
                                     @php
                                         $fee_fixed = (float) $qris_channel['fee_amount'];
                                         $fee_percent = (float) $qris_channel['fee_percent'];
                                         $subtotal = 239000;
-                                        $calculated_fee = $fee_fixed + ($subtotal * ($fee_percent / 100)) + 200;
+                                        $calculated_fee = $fee_fixed + $subtotal * ($fee_percent / 100) + 200;
                                     @endphp
                                     <label class="relative group cursor-pointer block">
                                         <input checked class="peer sr-only" name="payment_method"
                                             value="{{ $qris_channel['code'] }}" type="radio"
-                                            data-fee-fixed="{{ $fee_fixed }}" data-fee-percent="{{ $fee_percent }}" />
+                                            data-fee-fixed="{{ $fee_fixed }}"
+                                            data-fee-percent="{{ $fee_percent }}" />
                                         <div
                                             class="p-4 flex items-center justify-between rounded-xl bg-surface-container-lowest border-2 border-transparent peer-checked:border-primary peer-checked:bg-primary/5 transition-all group-hover:bg-surface-container-low shadow-sm">
                                             <div class="flex items-center space-x-4">
@@ -268,11 +277,13 @@
                                                     <span class="text-xs text-primary font-bold block">Paling cepat &
                                                         mudah</span>
                                                     <span class="text-[10px] text-on-surface-variant opacity-70">Biaya
-                                                        Admin: Rp {{ number_format($calculated_fee, 0, ',', '.') }}</span>
+                                                        Admin: Rp
+                                                        {{ number_format($calculated_fee, 0, ',', '.') }}</span>
                                                 </div>
                                             </div>
                                             <div class="opacity-0 peer-checked:opacity-100 transition-opacity">
-                                                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                                <svg class="w-6 h-6 text-primary" fill="currentColor"
+                                                    viewBox="0 0 20 20">
                                                     <path fill-rule="evenodd"
                                                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                                         clip-rule="evenodd"></path>
@@ -282,7 +293,7 @@
                                     </label>
                                 @endif
 
-                                @if($other_channels->count() > 0)
+                                @if ($other_channels->count() > 0)
                                     <div class="mt-4">
                                         <details class="group">
                                             <summary class="list-none cursor-pointer">
@@ -299,7 +310,8 @@
                                                                 </path>
                                                             </svg>
                                                         </div>
-                                                        <span class="font-bold text-on-surface text-sm">Metode Pembayaran
+                                                        <span class="font-bold text-on-surface text-sm">Metode
+                                                            Pembayaran
                                                             Lain</span>
                                                     </div>
                                                     <svg class="w-5 h-5 text-on-surface-variant transition-transform duration-300 group-open:rotate-180"
@@ -316,12 +328,13 @@
                                                     class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-3 px-1">
                                                     Pilih Bank</p>
                                                 <div class="grid grid-cols-1 gap-2">
-                                                    @foreach($other_channels as $channel)
+                                                    @foreach ($other_channels as $channel)
                                                         @php
                                                             $fee_fixed = (float) $channel['fee_amount'];
                                                             $fee_percent = (float) $channel['fee_percent'];
                                                             $subtotal = 239000;
-                                                            $calculated_fee = $fee_fixed + ($subtotal * ($fee_percent / 100)) + 500;
+                                                            $calculated_fee =
+                                                                $fee_fixed + $subtotal * ($fee_percent / 100) + 500;
                                                         @endphp
                                                         <label class="relative group cursor-pointer">
                                                             <input class="peer sr-only" name="payment_method"
@@ -392,8 +405,9 @@
                                 <div class="flex flex-col w-full">
                                     <div class="flex justify-between w-full mb-1">
                                         <span class="text-on-surface-variant text-sm">Harga Normal</span>
-                                        <span class="text-on-surface-variant text-sm line-through decoration-red-400">Rp
-                                            499.000</span>
+                                        <span
+                                            class="text-on-surface-variant text-sm line-through decoration-red-400">Rp
+                                            1.000.000</span>
                                     </div>
                                     <div class="flex justify-between w-full">
                                         <span
@@ -422,15 +436,18 @@
                                     <div class="flex justify-between pt-4 border-t border-surface-container">
                                         <span class="text-lg font-bold text-on-surface">Total</span>
                                         <div class="text-right">
-                                            <span class="block text-2xl font-extrabold text-primary" id="total_price">Rp
+                                            <span class="block text-2xl font-extrabold text-primary"
+                                                id="total_price">Rp
                                                 239.000</span>
-                                            <span class="text-[11px] text-green-600 font-bold">Hemat 70% hari ini</span>
+                                            <span class="text-[11px] text-green-600 font-bold">Hemat 70% hari
+                                                ini</span>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- CTA -->
                                 <div class="px-4">
-                                    <button type="submit" id="submit-btn" onclick="console.log('Form Submit Triggered')"
+                                    <button type="submit" id="submit-btn"
+                                        onclick="console.log('Form Submit Triggered')"
                                         class="w-full py-5 bg-primary text-white font-black rounded-2xl text-xl hover:bg-primary/90 active:scale-[0.98] transition-all flex items-center justify-center space-x-3 shadow-xl shadow-primary/25 relative z-30">
                                         <span>Bayar & Aktifkan Sekarang</span>
                                     </button>
@@ -446,10 +463,12 @@
                                         <span class="text-green-700 font-bold text-sm">Garansi 7 Hari Uang
                                             Kembali</span>
                                     </div>
-                                    <p class="text-[11px] text-on-surface-variant mt-2">🔒 Pembayaran aman & terenkripsi
+                                    <p class="text-[11px] text-on-surface-variant mt-2">🔒 Pembayaran aman &
+                                        terenkripsi
                                     </p>
                                 </div>
-                                <p class="text-center text-[10px] text-on-surface-variant/60 px-4 mt-4 leading-relaxed">
+                                <p
+                                    class="text-center text-[10px] text-on-surface-variant/60 px-4 mt-4 leading-relaxed">
                                     Dengan menekan tombol di atas, Anda menyetujui <a
                                         class="underline text-primary hover:text-primary/80"
                                         href="{{ route('terms') }}">Syarat &amp; Ketentuan</a>
@@ -509,7 +528,7 @@
         window.addEventListener('DOMContentLoaded', updatePrice);
 
         // Force Submit for Debugging
-        document.getElementById('submit-btn').addEventListener('click', function (e) {
+        document.getElementById('submit-btn').addEventListener('click', function(e) {
             console.log('Button clicked via JS listener');
             const form = document.querySelector('form[action="{{ route('checkout_ekspor.store') }}"]');
             if (form) {
