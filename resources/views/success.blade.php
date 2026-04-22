@@ -59,11 +59,10 @@
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '2691160627922371');
-        fbq('track', 'PageView');
         fbq('track', 'Purchase', { value: {{ $transaction->amount ?? 149000 }}, currency: 'IDR' });
     </script>
     <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=2691160627922371&ev=PageView&noscript=1" /></noscript>
+            src="https://www.facebook.com/tr?id=2691160627922371&ev=Purchase&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
 </head>
 
