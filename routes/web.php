@@ -20,6 +20,7 @@ Route::get('/checkout/success/{merchant_ref}', [CheckoutController::class, 'succ
 Route::get('/checkout/status/{merchant_ref}', [CheckoutController::class, 'checkStatus']);
 Route::get('/checkout/qris/download/{merchant_ref}', [CheckoutController::class, 'downloadQris'])->name('qris.download');
 Route::post('/webhook/wijayapay', [WebhookController::class, 'handle']);
+Route::post('/webhook/mayar', [WebhookController::class, 'handleMayar']);
 
 Route::get('/syarat-dan-ketentuan', function () {
     return view('terms');

@@ -4526,7 +4526,7 @@
                     <a class="text-slate-600 dark:text-slate-400 font-medium hover:text-primary transition-colors"
                         href="#pricing">Pricing</a>
                 </div>
-                <a href="{{ route('checkout') }}"
+                <a href="https://wamaps.myr.id/pl/checkout-wamaps"
                     class="bg-primary text-on-primary px-6 py-2 rounded-xl font-semibold scale-95 active:duration-150 transition-all hover:bg-primary-container">Klaim
                     Akses</a>
             </div>
@@ -4550,7 +4550,7 @@
                         WhatsApp blast otomatis
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="{{ route('checkout') }}"
+                        <a href="https://wamaps.myr.id/pl/checkout-wamaps"
                             class="bg-primary text-on-primary px-8 py-4 rounded-xl text-lg font-bold flex items-center justify-center gap-2 hover:bg-primary-container transition-all">
                             Klaim Akses Lifetime Sekarang
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -5160,7 +5160,7 @@
                             </div>
 
                             <div class="space-y-1 mb-8">
-                                <div class="text-4xl md:text-5xl font-black tracking-tighter">Rp 149.000</div>
+                                <div class="text-4xl md:text-5xl font-black tracking-tighter">Rp 179.000</div>
                                 <div class="flex items-center gap-3">
                                     <span class="text-lg text-white/40 line-through font-medium">Rp 499.000</span>
                                     <span
@@ -5257,7 +5257,7 @@
 
                             </ul>
                             <div class="mt-6">
-                                <a href="{{ route('checkout') }}"
+                                <a href="https://wamaps.myr.id/pl/checkout-wamaps"
                                     class="w-full py-6 bg-white hover:bg-slate-100 text-primary rounded-2xl text-xl font-black shadow-2xl shadow-black/20 transition-all hover:-translate-y-1 active:scale-[0.98] flex items-center justify-center text-center">
                                     Amankan Slot Promo Sekarang
                                 </a>
@@ -5389,7 +5389,7 @@
                             sebelum harga naik kembali!
                         </p>
                         <div class="pt-6">
-                            <a href="{{ route('checkout') }}"
+                            <a href="https://wamaps.myr.id/pl/checkout-wamaps"
                                 class="flex items-center justify-center text-center gap-4 bg-white hover:bg-slate-100 text-primary px-10 py-6 rounded-2xl text-xl md:text-2xl font-black shadow-2xl shadow-black/20 transition-all hover:-translate-y-1 active:scale-[0.98] group">
                                 Klaim Akses Lifetime Saya Sekarang
                                 <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform h-shrink-0"
@@ -5543,14 +5543,14 @@
                         Sekali</span>
                 </div>
                 <div class="flex items-baseline gap-2">
-                    <span class="text-xl font-black text-white leading-none">Rp 149.000</span>
+                    <span class="text-xl font-black text-white leading-none">Rp 179.000</span>
                     <span class="text-[10px] text-white/60 line-through leading-none">Rp 499.000</span>
                 </div>
 
             </div>
 
             <!-- Action Button -->
-            <a href="{{ route('checkout') }}"
+            <a href="https://wamaps.myr.id/pl/checkout-wamaps"
                 class="bg-green-600 hover:bg-green-500 text-white px-5 py-3 rounded-xl font-black text-xs flex items-center gap-2 shadow-xl shadow-green-900/10 active:scale-95 transition-all">
                 Klaim Sekarang
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

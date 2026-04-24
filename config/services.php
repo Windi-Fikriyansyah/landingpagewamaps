@@ -27,6 +27,10 @@ return [
         'api_key' => env('WIJAYAPAY_API_KEY'),
     ],
 
+    'mayar' => [
+        'api_key' => env('MAYAR_API_KEY'),
+    ],
+
     'brevo' => [
         'key' => env('BREVO_API_KEY'),
     ],
