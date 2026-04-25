@@ -53,15 +53,15 @@ class WebhookController extends Controller
 
         $event = $payload['event'] ?? '';
         $data = $payload['data'] ?? [];
-        
+
         // Support for 'testing', 'payment.received', and 'invoice.paid'
         if ($event === 'testing' || $event === 'payment.received' || $event === 'invoice.paid') {
-            
+
             // Try to get merchant_ref from various possible locations
-            $merchant_ref = $data['metadata']['merchant_ref'] ?? 
-                            $data['extraData']['noCustomer'] ?? 
-                            ($data['id'] ?? '');
-            
+            $merchant_ref = $data['metadata']['merchant_ref'] ??
+                $data['extraData']['noCustomer'] ??
+                ($data['id'] ?? '');
+
             $transaction = Transaction::where('merchant_ref', $merchant_ref)->first();
 
             if (!$transaction) {
@@ -69,7 +69,7 @@ class WebhookController extends Controller
                 $email = $data['customerEmail'] ?? $data['customer']['email'] ?? $data['email'] ?? '';
                 $name = $data['customerName'] ?? $data['customer']['name'] ?? $data['name'] ?? 'Customer';
                 $amount = $data['amount'] ?? 0;
-                
+
                 if (!empty($email)) {
                     // Create transaction record for history
                     $transaction = Transaction::create([
@@ -113,7 +113,7 @@ class WebhookController extends Controller
             $user = User::create([
                 'name' => $name,
                 'email' => $email,
-                'password_hash' => Hash::make($password),
+                'password' => Hash::make($password),
                 'plan_type' => 'pro',
                 'credits' => 1000,
             ]);
