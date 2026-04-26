@@ -5591,6 +5591,253 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block"
         rel="stylesheet" media="print" onload="this.media='all'" />
+    <!-- Sales Notification Popup -->
+    @if(isset($transactions) && count($transactions) > 0)
+        <div id="sales-notification" class="sales-notif-container">
+            <div class="sales-notif-box">
+                <!-- Left Accent Bar -->
+                <div class="sales-notif-accent"></div>
+                
+                <!-- Icon Section -->
+                <div class="sales-notif-icon-section">
+                    <div class="sales-notif-bell">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Content Section -->
+                <div class="sales-notif-content">
+                    <div class="sales-notif-header">
+                        <div class="sales-notif-user-info">
+                            <span id="notif-name" class="font-bold">And***</span>
+                            <span id="notif-email" class="text-slate-600">(top***@gmail.com)</span>
+                            <span class="text-slate-600 ml-1">baru saja</span>
+                        </div>
+                        <button id="close-notif" class="sales-notif-close">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="sales-notif-product">
+                        membeli <span class="font-bold">Produk WAMAPS Full Tools + Bonus Lengkap</span>, 
+                        senilai <span class="font-bold">Rp <span id="notif-amount">180.259</span></span>
+                    </p>
+                    <div class="sales-notif-footer">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 11 12 14 22 4"></polyline>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                        Transaction Verified by <span class="font-bold">Mayar.ID</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .sales-notif-container {
+                position: fixed;
+                top: 24px;
+                left: 24px;
+                z-index: 9999;
+                pointer-events: none;
+                transform: translateX(-120%);
+                opacity: 0;
+                transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            .sales-notif-container.show {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            .sales-notif-box {
+                background: #f8f9fa;
+                border: 1px solid #dee2e6;
+                border-radius: 8px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+                display: flex;
+                min-width: 420px;
+                max-width: 480px;
+                overflow: hidden;
+                pointer-events: auto;
+                position: relative;
+            }
+
+            .sales-notif-accent {
+                width: 5px;
+                background: #00aeef;
+                flex-shrink: 0;
+            }
+
+            .sales-notif-icon-section {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 15px;
+                flex-shrink: 0;
+            }
+
+            .sales-notif-bell {
+                width: 32px;
+                height: 32px;
+                color: #00aeef;
+            }
+
+            .sales-notif-content {
+                flex: 1;
+                padding: 12px 15px 12px 0;
+                font-family: 'Inter', sans-serif;
+            }
+
+            .sales-notif-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 2px;
+            }
+
+            .sales-notif-user-info {
+                font-size: 14px;
+                color: #333;
+                line-height: 1.4;
+            }
+
+            .sales-notif-close {
+                background: none;
+                border: none;
+                padding: 0;
+                color: #888;
+                cursor: pointer;
+                width: 18px;
+                height: 18px;
+                transition: color 0.2s;
+            }
+
+            .sales-notif-close:hover {
+                color: #333;
+            }
+
+            .sales-notif-product {
+                font-size: 14px;
+                color: #444;
+                margin: 0;
+                line-height: 1.5;
+            }
+
+            .sales-notif-footer {
+                margin-top: 8px;
+                font-size: 12px;
+                color: #00aeef;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .sales-notif-footer svg {
+                width: 14px;
+                height: 14px;
+            }
+
+            @media (max-width: 640px) {
+                .sales-notif-box {
+                    min-width: auto;
+                    width: calc(100vw - 48px);
+                }
+                .sales-notif-user-info {
+                    font-size: 12px;
+                }
+                .sales-notif-product {
+                    font-size: 12px;
+                }
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const transactions = @json($transactions);
+                const notification = document.getElementById('sales-notification');
+                const nameEl = document.getElementById('notif-name');
+                const emailEl = document.getElementById('notif-email');
+                const amountEl = document.getElementById('notif-amount');
+                const closeBtn = document.getElementById('close-notif');
+
+                if (!notification || transactions.length === 0) return;
+
+                let currentIndex = 0;
+                let timeoutId = null;
+
+                function maskName(name) {
+                    if (!name) return "Pelanggan";
+                    const parts = name.split(' ');
+                    let masked = parts[0];
+                    if (masked.length > 3) {
+                        masked = masked.substring(0, 3) + '***';
+                    } else {
+                        masked = masked + '***';
+                    }
+                    return masked;
+                }
+
+                function maskEmail(email) {
+                    if (!email) return "";
+                    const [user, domain] = email.split('@');
+                    let maskedUser = user;
+                    if (maskedUser.length > 3) {
+                        maskedUser = maskedUser.substring(0, 3) + '***';
+                    } else {
+                        maskedUser = maskedUser + '***';
+                    }
+                    return `(${maskedUser}@${domain})`;
+                }
+
+                function formatRupiah(amount) {
+                    return new Intl.NumberFormat('id-ID').format(amount);
+                }
+
+                function showNotification() {
+                    if (currentIndex >= transactions.length) currentIndex = 0;
+
+                    const tx = transactions[currentIndex];
+                    
+                    nameEl.textContent = maskName(tx.customer_name);
+                    emailEl.textContent = maskEmail(tx.customer_email);
+                    amountEl.textContent = formatRupiah(tx.amount || 180259);
+
+                    // Show with slide in
+                    notification.classList.add('show');
+
+                    // Hide after 5 seconds
+                    timeoutId = setTimeout(() => {
+                        hideNotification();
+                    }, 5000);
+
+                    currentIndex++;
+                }
+
+                function hideNotification() {
+                    notification.classList.remove('show');
+
+                    // Delay 5-6 seconds as requested
+                    const nextDelay = Math.floor(Math.random() * 1000) + 5000;
+                    timeoutId = setTimeout(showNotification, nextDelay);
+                }
+
+                closeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    notification.style.display = 'none';
+                    if (timeoutId) clearTimeout(timeoutId);
+                });
+
+                // Initial delay
+                setTimeout(showNotification, 2000);
+            });
+        </script>
+    @endif
 </body>
 
 </html>

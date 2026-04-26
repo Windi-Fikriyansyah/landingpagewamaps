@@ -6,7 +6,11 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\WebhookController;
 
 Route::get('/', function () {
-    return view('welcome');
+    $transactions = \App\Models\Transaction::where('status', 'PAID')
+        ->orderBy('id', 'desc')
+        ->limit(10)
+        ->get();
+    return view('welcome', compact('transactions'));
 });
 
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
