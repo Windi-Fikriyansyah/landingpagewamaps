@@ -4567,22 +4567,22 @@
                         <div
                             class="flex items-center gap-1.5 px-3 py-1.5 bg-secondary/[0.08] text-secondary rounded-full border border-secondary/10">
                             <span class="flex-shrink-0 text-xs sm:text-base font-black">✓</span>
-                            <span class="leading-tight">Mengambil ribuan leads bisnis</span>
+                            <span class="leading-tight">Ambil Prospek Dari Google Maps </span>
                         </div>
                         <div
                             class="flex items-center gap-1.5 px-3 py-1.5 bg-secondary/[0.08] text-secondary rounded-full border border-secondary/10">
                             <span class="flex-shrink-0 text-xs sm:text-base font-black">✓</span>
-                            <span class="leading-tight">Simpan data otomatis</span>
+                            <span class="leading-tight">Ambil Prospek Dari Linkedin</span>
                         </div>
                         <div
                             class="flex items-center gap-1.5 px-3 py-1.5 bg-secondary/[0.08] text-secondary rounded-full border border-secondary/10">
                             <span class="flex-shrink-0 text-xs sm:text-base font-black">✓</span>
-                            <span class="leading-tight">Kirim broadcast massal</span>
+                            <span class="leading-tight">Ambil Prospek Dari Instagram</span>
                         </div>
                         <div
                             class="flex items-center gap-1.5 px-3 py-1.5 bg-secondary/[0.08] text-secondary rounded-full border border-secondary/10">
                             <span class="flex-shrink-0 text-xs sm:text-base font-black">✓</span>
-                            <span class="leading-tight">Export Excel</span>
+                            <span class="leading-tight">Ambil Prospek Dari Facebook</span>
                         </div>
                         <div
                             class="flex items-center gap-1.5 px-3 py-1.5 bg-secondary/[0.08] text-secondary rounded-full border border-secondary/10">
@@ -4592,33 +4592,19 @@
                         <div
                             class="flex items-center gap-1.5 px-3 py-1.5 bg-secondary/[0.08] text-secondary rounded-full border border-secondary/10">
                             <span class="flex-shrink-0 text-xs sm:text-base font-black">✓</span>
-                            <span class="leading-tight">Template Pesan Broadcast</span>
+                            <span class="leading-tight">Kirim Wa Broadcast Otomatis</span>
                         </div>
                     </div>
                 </div>
                 <div class="relative">
                     <div class="absolute inset-0 bg-primary/5 rounded-3xl -rotate-2 scale-105"></div>
-                    <div class="relative bg-surface-container-lowest rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/10 group cursor-pointer"
-                        onclick="const v = this.querySelector('video'); const o = this.querySelector('.play-overlay'); if(v.paused){v.play(); v.controls=true; o.classList.add('hidden')} else {v.pause()}">
-                        <video class="w-full h-auto block focus:outline-none" poster="{{ asset('thumnail.webp') }}"
-                            preload="metadata"
-                            onended="this.controls=false; this.parentElement.querySelector('.play-overlay').classList.remove('hidden')">
-                            <source src="https://ik.imagekit.io/bzq0b2kjq/0401.mp4?updatedAt=1775027577346"
-                                type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-
-                        <!-- Play Button Overlay -->
-                        <div
-                            class="play-overlay absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-all duration-300">
-                            <div
-                                class="w-16 h-16 md:w-20 md:h-20 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-2xl scale-90 group-hover:scale-100 transition-transform duration-300 border-4 border-white/20">
-                                <svg class="w-10 h-10 md:w-12 md:h-12 fill-current ml-1" viewBox="0 0 24 24"
-                                    aria-hidden="true">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </div>
-                        </div>
+                    <div class="relative bg-surface-container-lowest rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/10 group"
+                        style="aspect-ratio: 16 / 9;">
+                        <iframe class="w-full h-full"
+                            src="https://www.youtube.com/embed/j2999uaKlaM?si=QjD2Wzrcr8aQTXr6"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -4843,6 +4829,57 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                    <!-- Video Demo Lengkap -->
+                    <div
+                        class="bg-white dark:bg-slate-900 p-6 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div
+                            class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300">
+                            <!-- Native YouTube Embed -->
+                            <iframe class="w-full h-full pt-6"
+                                src="https://www.youtube.com/embed/j2999uaKlaM?si=QjD2Wzrcr8aQTXr6" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+
+                            <!-- Browser Frame Placeholder Over Embed -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-6 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center px-3 gap-1 z-10">
+                                <div class="w-1.5 h-1.5 rounded-full bg-red-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-amber-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-green-400/50"></div>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold mb-3 text-on-surface group-hover:text-primary transition-colors">
+                            Demo Lengkap Wamaps Versi Software</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Tonton video ini untuk melihat
+                            bagaimana Wamaps mengotomatisasi pencarian prospek dan promosi Anda.</p>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-slate-900 p-6 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div
+                            class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300">
+                            <!-- Native YouTube Embed -->
+                            <iframe class="w-full h-full pt-6"
+                                src="https://www.youtube.com/embed/Me0YJTNxEq8?si=1RVG_DnTVz9fcGEd" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+
+                            <!-- Browser Frame Placeholder Over Embed -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-6 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center px-3 gap-1 z-10">
+                                <div class="w-1.5 h-1.5 rounded-full bg-red-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-amber-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-green-400/50"></div>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold mb-3 text-on-surface group-hover:text-primary transition-colors">
+                            Demo Lengkap Wamaps Versi Web</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Tonton video ini untuk melihat
+                            bagaimana Wamaps mengotomatisasi pencarian prospek dan promosi Anda.</p>
+                    </div>
+
                     <!-- Auto Scraping Google Maps -->
                     <div
                         class="bg-white dark:bg-slate-900 p-6 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
@@ -4852,7 +4889,7 @@
                             <iframe class="w-full h-full pt-6"
                                 src="https://www.youtube.com/embed/7VrqMjEp2ME?rel=0&modestbranding=1" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
+                                allowfullscreen>
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4875,9 +4912,34 @@
                             class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300">
                             <!-- Native YouTube Embed -->
                             <iframe class="w-full h-full pt-6"
+                                src="https://www.youtube.com/embed/29HXc6n60j4?si=CdJmLDtXJFd98zlA" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+
+                            <!-- Browser Frame Placeholder Over Embed -->
+                            <div
+                                class="absolute top-0 left-0 w-full h-6 bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 flex items-center px-3 gap-1 z-10">
+                                <div class="w-1.5 h-1.5 rounded-full bg-red-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-amber-400/50"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-green-400/50"></div>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold mb-3 text-on-surface group-hover:text-primary transition-colors">
+                            Auto Scraping Facebook, Instagram, & Linkedin</h3>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">Ambil ribuan leads bisnis sesuai
+                            keyword target secara otomatis dalam hitungan detik.</p>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-slate-900 p-6 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div
+                            class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300">
+                            <!-- Native YouTube Embed -->
+                            <iframe class="w-full h-full pt-6"
                                 src="https://www.youtube.com/embed/deulSv3jyO8?rel=0&modestbranding=1" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
+                                allowfullscreen>
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4907,7 +4969,7 @@
                             <iframe class="w-full h-full pt-6"
                                 src="https://www.youtube.com/embed/LfAuCmWf3I0?si=K2W_MT-Cflgl-L1D" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
+                                allowfullscreen>
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4933,7 +4995,7 @@
                             <iframe class="w-full h-full pt-6"
                                 src="https://www.youtube.com/embed/CMzu4Stl8HA?si=poA1A3ITYic6aYSG" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
+                                allowfullscreen>
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4971,7 +5033,7 @@
                             <iframe class="w-full h-full pt-6"
                                 src="https://www.youtube.com/embed/kfXHohrX9ME?si=myHy8OKKnsh9Lvds" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
+                                allowfullscreen>
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4997,7 +5059,7 @@
                             <iframe class="w-full h-full pt-6"
                                 src="https://www.youtube.com/embed/diW5RHOULc4?si=Ie8TNADd0nJO57oT" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
+                                allowfullscreen>
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -5174,7 +5236,7 @@
                                 class="grid grid-cols-2 gap-4 mb-8 py-6 border-y border-white/10 uppercase tracking-tight text-[10px] font-bold">
                                 <div class="space-y-1">
                                     <div class="text-amber-400 flex items-center gap-1 text-[11px]">
-                                        <span class="animate-pulse">🔥</span> 27 slot lagi
+                                        <span class="animate-pulse">🔥</span> 10 slot lagi
                                     </div>
                                     <div class="text-white/80">di harga ini</div>
                                 </div>
@@ -5196,6 +5258,15 @@
                                             <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                                         </svg>
                                     </div>
+                                    <span>2 Versi (Web & Software)</span>
+                                </li>
+                                <li class="flex items-center gap-4 text-base font-medium group/item">
+                                    <div
+                                        class="w-6 h-6 bg-white/20 text-white rounded-full flex items-center justify-center border border-white/20 group-hover/item:scale-110 transition-transform">
+                                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                        </svg>
+                                    </div>
                                     <span>Auto Scraping Google Maps</span>
                                 </li>
                                 <li class="flex items-center gap-4 text-base font-medium group/item">
@@ -5206,6 +5277,24 @@
                                         </svg>
                                     </div>
                                     <span>Auto Scraping Linkedln</span>
+                                </li>
+                                <li class="flex items-center gap-4 text-base font-medium group/item">
+                                    <div
+                                        class="w-6 h-6 bg-white/20 text-white rounded-full flex items-center justify-center border border-white/20 group-hover/item:scale-110 transition-transform">
+                                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                        </svg>
+                                    </div>
+                                    <span>Auto Scraping Facebook</span>
+                                </li>
+                                <li class="flex items-center gap-4 text-base font-medium group/item">
+                                    <div
+                                        class="w-6 h-6 bg-white/20 text-white rounded-full flex items-center justify-center border border-white/20 group-hover/item:scale-110 transition-transform">
+                                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                        </svg>
+                                    </div>
+                                    <span>Auto Scraping Instagram</span>
                                 </li>
                                 <li class="flex items-center gap-4 text-base font-medium group/item">
                                     <div
@@ -5597,11 +5686,12 @@
             <div class="sales-notif-box">
                 <!-- Left Accent Bar -->
                 <div class="sales-notif-accent"></div>
-                
+
                 <!-- Icon Section -->
                 <div class="sales-notif-icon-section">
                     <div class="sales-notif-bell">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
                             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
                         </svg>
@@ -5617,18 +5707,20 @@
                             <span class="text-slate-600 ml-1">baru saja</span>
                         </div>
                         <button id="close-notif" class="sales-notif-close">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="18" y1="6" x2="6" y2="18"></line>
                                 <line x1="6" y1="6" x2="18" y2="18"></line>
                             </svg>
                         </button>
                     </div>
                     <p class="sales-notif-product">
-                        membeli <span class="font-bold">Produk WAMAPS Full Tools + Bonus Lengkap</span>, 
+                        membeli <span class="font-bold">Produk WAMAPS Full Tools + Bonus Lengkap</span>,
                         senilai <span class="font-bold">Rp <span id="notif-amount">180.259</span></span>
                     </p>
                     <div class="sales-notif-footer">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <polyline points="9 11 12 14 22 4"></polyline>
                             <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
                         </svg>
@@ -5748,9 +5840,11 @@
                     min-width: auto;
                     width: calc(100vw - 48px);
                 }
+
                 .sales-notif-user-info {
                     font-size: 12px;
                 }
+
                 .sales-notif-product {
                     font-size: 12px;
                 }
@@ -5803,7 +5897,7 @@
                     if (currentIndex >= transactions.length) currentIndex = 0;
 
                     const tx = transactions[currentIndex];
-                    
+
                     nameEl.textContent = maskName(tx.customer_name);
                     emailEl.textContent = maskEmail(tx.customer_email);
                     amountEl.textContent = formatRupiah(tx.amount || 180259);
