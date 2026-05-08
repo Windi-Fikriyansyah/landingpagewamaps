@@ -4481,23 +4481,23 @@
     <!-- Meta Pixel Code -->
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=2691160627922371&ev=PageView&noscript=1" /></noscript>
-    <!-- Crisp Live Chat -->
+    {{-- <!-- Crisp Live Chat -->
     @if (config('services.crisp.id'))
-        <script type="text/javascript">
-            window.$crisp = [];
-            window.CRISP_WEBSITE_ID = "{{ config('services.crisp.id') }}";
-            (function () {
-                // Set bahasa ke Indonesia
-                window.$crisp.push(["set", "common:locale", ["id"]]);
+    <script type="text/javascript">
+        window.$crisp = [];
+        window.CRISP_WEBSITE_ID = "{{ config('services.crisp.id') }}";
+        (function () {
+            // Set bahasa ke Indonesia
+            window.$crisp.push(["set", "common:locale", ["id"]]);
 
-                d = document;
-                s = d.createElement("script");
-                s.src = "https://client.crisp.chat/l.js";
-                s.async = 1;
-                d.getElementsByTagName("head")[0].appendChild(s);
-            })();
-        </script>
-    @endif
+            d = document;
+            s = d.createElement("script");
+            s.src = "https://client.crisp.chat/l.js";
+            s.async = 1;
+            d.getElementsByTagName("head")[0].appendChild(s);
+        })();
+    </script>
+    @endif --}}
 </head>
 
 
@@ -5222,12 +5222,12 @@
                             </div>
 
                             <div class="space-y-1 mb-8">
-                                <div class="text-4xl md:text-5xl font-black tracking-tighter">Rp 179.000</div>
+                                <div class="text-4xl md:text-5xl font-black tracking-tighter">Rp 249.000</div>
                                 <div class="flex items-center gap-3">
                                     <span class="text-lg text-white/40 line-through font-medium">Rp 499.000</span>
                                     <span
                                         class="bg-white/20 text-white px-3 py-1 rounded-full text-[10px] font-bold border border-white/20">Hemat
-                                        70%</span>
+                                        50%</span>
                                 </div>
                             </div>
 
@@ -5241,7 +5241,7 @@
                                     <div class="text-white/80">di harga ini</div>
                                 </div>
                                 <div class="text-right space-y-1">
-                                    <div class="text-white/80">Naik ke Rp 249.000</div>
+                                    <div class="text-white/80">Naik ke Rp 499.000</div>
                                     <div class="text-white/80">setelahnya</div>
                                 </div>
                             </div>
@@ -5267,7 +5267,7 @@
                                             <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                                         </svg>
                                     </div>
-                                    <span>Auto Scraping Google Maps</span>
+                                    <span>Auto Scraping Google Maps (Unlimited)</span>
                                 </li>
                                 <li class="flex items-center gap-4 text-base font-medium group/item">
                                     <div
@@ -5276,7 +5276,7 @@
                                             <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                                         </svg>
                                     </div>
-                                    <span>Auto Scraping Linkedln</span>
+                                    <span>Auto Scraping Linkedln (Unlimited)</span>
                                 </li>
                                 <li class="flex items-center gap-4 text-base font-medium group/item">
                                     <div
@@ -5285,7 +5285,7 @@
                                             <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                                         </svg>
                                     </div>
-                                    <span>Auto Scraping Facebook</span>
+                                    <span>Auto Scraping Facebook (Unlimited)</span>
                                 </li>
                                 <li class="flex items-center gap-4 text-base font-medium group/item">
                                     <div
@@ -5294,7 +5294,7 @@
                                             <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
                                         </svg>
                                     </div>
-                                    <span>Auto Scraping Instagram</span>
+                                    <span>Auto Scraping Instagram (Unlimited)</span>
                                 </li>
                                 <li class="flex items-center gap-4 text-base font-medium group/item">
                                     <div
@@ -5620,7 +5620,7 @@
         </div>
     </footer>
     <!-- Sticky Mobile Checkout Bar (Commented Out) -->
-    {{--
+
     <div
         class="fixed bottom-0 left-0 w-full md:hidden bg-primary/95 backdrop-blur-md border-t border-white/20 z-[100] px-4 py-2.5 pb-safe shadow-[0_-10px_40px_rgba(20,94,252,0.3)]">
         <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
@@ -5632,7 +5632,7 @@
                         Sekali</span>
                 </div>
                 <div class="flex items-baseline gap-2">
-                    <span class="text-xl font-black text-white leading-none">Rp 179.000</span>
+                    <span class="text-xl font-black text-white leading-none">Rp 249.000</span>
                     <span class="text-[10px] text-white/60 line-through leading-none">Rp 499.000</span>
                 </div>
 
@@ -5649,7 +5649,6 @@
             </a>
         </div>
     </div>
-    --}}
 
     <script>
         window.addEventListener('load', function () {
