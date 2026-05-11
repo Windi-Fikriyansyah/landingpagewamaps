@@ -4542,7 +4542,6 @@
                         500+ Pebisnis Indonesia</span>
                     <h1 class="text-5xl lg:text-6xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
                         Capek Cari Leads Manual Tapi Chat Sepi & Closing Gak Jalan?
-                        <span class="text-primary">Detik</span>
                     </h1>
                     <p class="text-lg text-on-surface-variant max-w-xl leading-relaxed">
                         Wamapss bantu kamu ambil ribuan kontak bisnis tertarget dari Google Maps, Social Media & kirim WhatsApp otomatis dalam hitungan menit.
