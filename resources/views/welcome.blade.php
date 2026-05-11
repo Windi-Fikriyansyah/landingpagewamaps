@@ -4541,18 +4541,16 @@
                         class="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold tracking-widest uppercase">Dipakai
                         500+ Pebisnis Indonesia</span>
                     <h1 class="text-5xl lg:text-6xl font-extrabold text-on-surface leading-[1.1] tracking-tight">
-                        Dapatkan 1.000+ <span class="text-secondary">Kontak Prospek Bisnis Lokal</span>
-                        Hanya Dalam Hitungan
+                        Capek Cari Leads Manual Tapi Chat Sepi & Closing Gak Jalan?
                         <span class="text-primary">Detik</span>
                     </h1>
                     <p class="text-lg text-on-surface-variant max-w-xl leading-relaxed">
-                        Tanpa cold calling, tanpa beli database, tanpa buang waktu — langsung dari Google Maps ke
-                        WhatsApp blast otomatis
+                        Wamapss bantu kamu ambil ribuan kontak bisnis tertarget dari Google Maps, Social Media & kirim WhatsApp otomatis dalam hitungan menit.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="https://wamaps.myr.id/pl/checkout-wamaps"
                             class="bg-primary text-on-primary px-8 py-4 rounded-xl text-lg font-bold flex items-center justify-center gap-2 hover:bg-primary-container transition-all">
-                            Klaim Akses Lifetime Sekarang
+                           Mulai Cari Customer
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
                             </svg>
