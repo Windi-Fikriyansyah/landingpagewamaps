@@ -13,6 +13,14 @@ Route::get('/', function () {
     return view('welcome', compact('transactions'));
 });
 
+Route::get('/tools', function () {
+    $transactions = \App\Models\Transaction::where('status', 'PAID')
+        ->orderBy('id', 'desc')
+        ->limit(10)
+        ->get();
+    return view('wamaps', compact('transactions'));
+});
+
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 
