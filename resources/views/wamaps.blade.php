@@ -5904,6 +5904,37 @@
             });
         </script>
     @endif
+
+    <!-- TikTok Pixel Event Tracking -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 1. Track clicks on "Checkout / Klaim Akses" buttons
+            const checkoutButtons = document.querySelectorAll('a[href*="checkout-wamaps"]');
+            checkoutButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    if (typeof ttq !== 'undefined') {
+                        ttq.track('InitiateCheckout', {
+                            content_name: 'Wamaps Lifetime Access',
+                            currency: 'IDR',
+                            value: 0
+                        });
+                    }
+                });
+            });
+
+            // 2. Track clicks on WhatsApp Admin button
+            const whatsappButtons = document.querySelectorAll('a[href*="wa.me"]');
+            whatsappButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    if (typeof ttq !== 'undefined') {
+                        ttq.track('Contact', {
+                            content_name: 'WhatsApp Admin'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
