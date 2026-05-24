@@ -11,6 +11,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
         rel="stylesheet" media="print" onload="this.media='all'" />
@@ -4596,10 +4599,10 @@
                     <div class="relative bg-surface-container-lowest rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/10 group"
                         style="aspect-ratio: 16 / 9;">
                         <iframe class="w-full h-full"
-                            src="https://www.youtube.com/embed/j2999uaKlaM?si=QjD2Wzrcr8aQTXr6"
+                            data-src="https://www.youtube.com/embed/j2999uaKlaM?si=QjD2Wzrcr8aQTXr6"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
