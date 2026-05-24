@@ -4479,9 +4479,6 @@
             }
         }
     </style>
-<!-- Meta Pixel Code -->
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=2691160627922371&ev=PageView&noscript=1" /></noscript>
     {{-- <!-- Crisp Live Chat -->
     @if (config('services.crisp.id'))
     <script type="text/javascript">
@@ -4598,11 +4595,20 @@
                     <div class="absolute inset-0 bg-primary/5 rounded-3xl -rotate-2 scale-105"></div>
                     <div class="relative bg-surface-container-lowest rounded-3xl overflow-hidden shadow-2xl border border-outline-variant/10 group"
                         style="aspect-ratio: 16 / 9;">
-                        <iframe class="w-full h-full"
-                            data-src="https://www.youtube.com/embed/j2999uaKlaM?si=QjD2Wzrcr8aQTXr6"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                        <button type="button"
+                            class="relative w-full h-full focus:outline-none"
+                            data-video-src="https://www.youtube.com/embed/j2999uaKlaM?si=QjD2Wzrcr8aQTXr6"
+                            aria-label="Putar video demo Wamaps"
+                            style="background: url('https://i.ytimg.com/vi/j2999uaKlaM/maxresdefault.jpg') center/cover no-repeat;">
+                            <span class="absolute inset-0 bg-black/40"></span>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/90 text-primary shadow-xl">
+                                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 8l6 4-6 4V8z" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -4836,7 +4842,7 @@
                             <iframe class="w-full h-full pt-6"
                                 data-src="https://www.youtube.com/embed/j2999uaKlaM?si=QjD2Wzrcr8aQTXr6" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy">
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" title="YouTube video player">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4861,7 +4867,7 @@
                             <iframe class="w-full h-full pt-6"
                                 data-src="https://www.youtube.com/embed/Me0YJTNxEq8?si=1RVG_DnTVz9fcGEd" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy">
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" title="YouTube video player">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4887,7 +4893,7 @@
                             <iframe class="w-full h-full pt-6"
                                 data-src="https://www.youtube.com/embed/7VrqMjEp2ME?rel=0&modestbranding=1" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
+                                allowfullscreen loading="lazy" title="YouTube video player">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4912,7 +4918,7 @@
                             <iframe class="w-full h-full pt-6"
                                 data-src="https://www.youtube.com/embed/29HXc6n60j4?si=CdJmLDtXJFd98zlA" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
+                                allowfullscreen loading="lazy" title="YouTube video player">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4937,7 +4943,7 @@
                             <iframe class="w-full h-full pt-6"
                                 data-src="https://www.youtube.com/embed/deulSv3jyO8?rel=0&modestbranding=1" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
+                                allowfullscreen loading="lazy" title="YouTube video player">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4967,7 +4973,7 @@
                             <iframe class="w-full h-full pt-6"
                                 data-src="https://www.youtube.com/embed/LfAuCmWf3I0?si=K2W_MT-Cflgl-L1D" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
+                                allowfullscreen loading="lazy" title="YouTube video player">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4993,7 +4999,7 @@
                             <iframe class="w-full h-full pt-6"
                                 data-src="https://www.youtube.com/embed/CMzu4Stl8HA?si=poA1A3ITYic6aYSG" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
+                                allowfullscreen loading="lazy" title="YouTube video player">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -5031,7 +5037,7 @@
                             <iframe class="w-full h-full pt-6"
                                 data-src="https://www.youtube.com/embed/kfXHohrX9ME?si=myHy8OKKnsh9Lvds" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
+                                allowfullscreen loading="lazy" title="YouTube video player">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -5057,7 +5063,7 @@
                             <iframe class="w-full h-full pt-6"
                                 data-src="https://www.youtube.com/embed/diW5RHOULc4?si=Ie8TNADd0nJO57oT" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen loading="lazy">
+                                allowfullscreen loading="lazy" title="YouTube video player">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -5648,33 +5654,8 @@
         </div>
     </div>
 
-    <script>
-        window.addEventListener('load', function () {
-            setTimeout(function () {
-                ! function (f, b, e, v, n, t, s) {
-                    if (f.fbq) return;
-                    n = f.fbq = function () {
-                        n.callMethod ?
-                            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-                    };
-                    if (!f._fbq) f._fbq = n;
-                    n.push = n;
-                    n.loaded = !0;
-                    n.version = '2.0';
-                    n.queue = [];
-                    t = b.createElement(e);
-                    t.async = !0;
-                    t.src = v;
-                    s = b.getElementsByTagName(e)[0];
-                    s.parentNode.insertBefore(t, s)
-                }(window, document, 'script',
-                    'https://connect.facebook.net/en_US/fbevents.js');
-                fbq('init', '2691160627922371');
-                fbq('track', 'PageView');
-            }, 2000);
-        });
-    </script>
-    <link
+    
+<link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block"
         rel="stylesheet" media="print" onload="this.media='all'" />
     <!-- Sales Notification Popup -->
@@ -5703,7 +5684,7 @@
                             <span id="notif-email" class="text-slate-600">(top***@gmail.com)</span>
                             <span class="text-slate-600 ml-1">baru saja</span>
                         </div>
-                        <button id="close-notif" class="sales-notif-close">
+                        <button id="close-notif" class="sales-notif-close" aria-label="Tutup notifikasi">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -5946,11 +5927,28 @@
                             obs.unobserve(entry.target);
                         }
                     });
-                }, { rootMargin: '300px 0px' });
+                }, { rootMargin: '150px 0px' });
                 lazyVideos.forEach(video => observer.observe(video));
             } else {
                 lazyVideos.forEach(loadVideo);
             }
+
+            const videoButtons = document.querySelectorAll('[data-video-src]');
+            videoButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const src = this.dataset.videoSrc;
+                    if (!src) return;
+                    const iframe = document.createElement('iframe');
+                    iframe.className = 'w-full h-full';
+                    iframe.src = src;
+                    iframe.title = 'YouTube video player';
+                    iframe.frameBorder = '0';
+                    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+                    iframe.allowFullscreen = true;
+                    this.replaceWith(iframe);
+                });
+            });
         });
     </script>
 </body>
