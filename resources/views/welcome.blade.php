@@ -4476,9 +4476,7 @@
             }
         }
     </style>
-
-    @vite(['resources/js/app.js'])
-    <!-- Meta Pixel Code -->
+<!-- Meta Pixel Code -->
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=2691160627922371&ev=PageView&noscript=1" /></noscript>
     {{-- <!-- Crisp Live Chat -->
@@ -4833,9 +4831,9 @@
                             class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300">
                             <!-- Native YouTube Embed -->
                             <iframe class="w-full h-full pt-6"
-                                src="https://www.youtube.com/embed/j2999uaKlaM?si=QjD2Wzrcr8aQTXr6" frameborder="0"
+                                data-src="https://www.youtube.com/embed/j2999uaKlaM?si=QjD2Wzrcr8aQTXr6" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4858,9 +4856,9 @@
                             class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300">
                             <!-- Native YouTube Embed -->
                             <iframe class="w-full h-full pt-6"
-                                src="https://www.youtube.com/embed/Me0YJTNxEq8?si=1RVG_DnTVz9fcGEd" frameborder="0"
+                                data-src="https://www.youtube.com/embed/Me0YJTNxEq8?si=1RVG_DnTVz9fcGEd" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4884,9 +4882,9 @@
                             class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300">
                             <!-- Native YouTube Embed -->
                             <iframe class="w-full h-full pt-6"
-                                src="https://www.youtube.com/embed/7VrqMjEp2ME?rel=0&modestbranding=1" frameborder="0"
+                                data-src="https://www.youtube.com/embed/7VrqMjEp2ME?rel=0&modestbranding=1" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
+                                allowfullscreen loading="lazy">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4909,9 +4907,9 @@
                             class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300">
                             <!-- Native YouTube Embed -->
                             <iframe class="w-full h-full pt-6"
-                                src="https://www.youtube.com/embed/29HXc6n60j4?si=CdJmLDtXJFd98zlA" frameborder="0"
+                                data-src="https://www.youtube.com/embed/29HXc6n60j4?si=CdJmLDtXJFd98zlA" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
+                                allowfullscreen loading="lazy">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4934,9 +4932,9 @@
                             class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300">
                             <!-- Native YouTube Embed -->
                             <iframe class="w-full h-full pt-6"
-                                src="https://www.youtube.com/embed/deulSv3jyO8?rel=0&modestbranding=1" frameborder="0"
+                                data-src="https://www.youtube.com/embed/deulSv3jyO8?rel=0&modestbranding=1" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
+                                allowfullscreen loading="lazy">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4964,9 +4962,9 @@
                             class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300">
                             <!-- Native YouTube Embed -->
                             <iframe class="w-full h-full pt-6"
-                                src="https://www.youtube.com/embed/LfAuCmWf3I0?si=K2W_MT-Cflgl-L1D" frameborder="0"
+                                data-src="https://www.youtube.com/embed/LfAuCmWf3I0?si=K2W_MT-Cflgl-L1D" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
+                                allowfullscreen loading="lazy">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -4990,9 +4988,9 @@
                             class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300">
                             <!-- Native YouTube Embed -->
                             <iframe class="w-full h-full pt-6"
-                                src="https://www.youtube.com/embed/CMzu4Stl8HA?si=poA1A3ITYic6aYSG" frameborder="0"
+                                data-src="https://www.youtube.com/embed/CMzu4Stl8HA?si=poA1A3ITYic6aYSG" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
+                                allowfullscreen loading="lazy">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -5028,9 +5026,9 @@
                             class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300">
                             <!-- Native YouTube Embed -->
                             <iframe class="w-full h-full pt-6"
-                                src="https://www.youtube.com/embed/kfXHohrX9ME?si=myHy8OKKnsh9Lvds" frameborder="0"
+                                data-src="https://www.youtube.com/embed/kfXHohrX9ME?si=myHy8OKKnsh9Lvds" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
+                                allowfullscreen loading="lazy">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -5054,9 +5052,9 @@
                             class="aspect-[4/3] bg-slate-50 dark:bg-slate-800 rounded-3xl mb-6 overflow-hidden relative border border-slate-100 dark:border-slate-700 shadow-inner group-hover:shadow-md transition-all duration-300">
                             <!-- Native YouTube Embed -->
                             <iframe class="w-full h-full pt-6"
-                                src="https://www.youtube.com/embed/diW5RHOULc4?si=Ie8TNADd0nJO57oT" frameborder="0"
+                                data-src="https://www.youtube.com/embed/diW5RHOULc4?si=Ie8TNADd0nJO57oT" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
+                                allowfullscreen loading="lazy">
                             </iframe>
 
                             <!-- Browser Frame Placeholder Over Embed -->
@@ -5928,6 +5926,30 @@
             });
         </script>
     @endif
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const lazyVideos = document.querySelectorAll('iframe[data-src]');
+            if (!lazyVideos.length) return;
+            const loadVideo = (iframe) => {
+                iframe.src = iframe.dataset.src;
+                iframe.removeAttribute('data-src');
+            };
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            loadVideo(entry.target);
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { rootMargin: '300px 0px' });
+                lazyVideos.forEach(video => observer.observe(video));
+            } else {
+                lazyVideos.forEach(loadVideo);
+            }
+        });
+    </script>
 </body>
 
 </html>
