@@ -57,6 +57,13 @@ class WebhookController extends Controller
         // Support for 'testing', 'payment.received', and 'invoice.paid'
         if ($event === 'testing' || $event === 'payment.received' || $event === 'invoice.paid') {
 
+            $amount = $data['amount'] ?? 0;
+
+            if ($amount < 249000) {
+                Log::info("Mayar Webhook Ignored: Amount {$amount} is below 249000.");
+                return response()->json(['status' => 'ignored', 'reason' => 'amount below 249000']);
+            }
+
             // Try to get merchant_ref from various possible locations
             $merchant_ref = $data['metadata']['merchant_ref'] ??
                 $data['extraData']['noCustomer'] ??
