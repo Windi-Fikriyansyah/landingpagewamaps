@@ -5247,7 +5247,7 @@
                                     <span class="text-lg text-white/40 line-through font-medium">Rp 249.000</span>
                                     <span
                                         class="bg-white/20 text-white px-3 py-1 rounded-full text-[10px] font-bold border border-white/20">Hemat
-                                        50%</span>
+                                        60%</span>
                                 </div>
                             </div>
 
