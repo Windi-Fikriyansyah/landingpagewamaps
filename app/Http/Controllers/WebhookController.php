@@ -59,9 +59,9 @@ class WebhookController extends Controller
 
             $amount = $data['amount'] ?? 0;
 
-            if ($amount < 249000) {
-                Log::info("Mayar Webhook Ignored: Amount {$amount} is below 249000.");
-                return response()->json(['status' => 'ignored', 'reason' => 'amount below 249000']);
+            if ($amount < 10000) {
+                Log::info("Mayar Webhook Ignored: Amount {$amount} is below 10000.");
+                return response()->json(['status' => 'ignored', 'reason' => 'amount below 10000']);
             }
 
             // Try to get merchant_ref from various possible locations
