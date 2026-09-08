@@ -5242,9 +5242,9 @@
                             </div>
 
                             <div class="space-y-1 mb-8">
-                                <div class="text-4xl md:text-5xl font-black tracking-tighter">Rp 249.000</div>
+                                <div class="text-4xl md:text-5xl font-black tracking-tighter">Rp 99.000</div>
                                 <div class="flex items-center gap-3">
-                                    <span class="text-lg text-white/40 line-through font-medium">Rp 499.000</span>
+                                    <span class="text-lg text-white/40 line-through font-medium">Rp 249.000</span>
                                     <span
                                         class="bg-white/20 text-white px-3 py-1 rounded-full text-[10px] font-bold border border-white/20">Hemat
                                         50%</span>
@@ -5261,7 +5261,7 @@
                                     <div class="text-white/80">di harga ini</div>
                                 </div>
                                 <div class="text-right space-y-1">
-                                    <div class="text-white/80">Naik ke Rp 499.000</div>
+                                    <div class="text-white/80">Naik ke Rp 249.000</div>
                                     <div class="text-white/80">setelahnya</div>
                                 </div>
                             </div>
@@ -5652,8 +5652,8 @@
                         Sekali</span>
                 </div>
                 <div class="flex items-baseline gap-2">
-                    <span class="text-xl font-black text-white leading-none">Rp 249.000</span>
-                    <span class="text-[10px] text-white/60 line-through leading-none">Rp 499.000</span>
+                    <span class="text-xl font-black text-white leading-none">Rp 99.000</span>
+                    <span class="text-[10px] text-white/60 line-through leading-none">Rp 249.000</span>
                 </div>
 
             </div>
@@ -5670,7 +5670,7 @@
         </div>
     </div>
 
-    
+
 <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block"
         rel="stylesheet" media="print" onload="this.media='all'" />
@@ -5970,3 +5970,5 @@
 </body>
 
 </html>
+
+
